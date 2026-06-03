@@ -93,3 +93,4 @@ Vydejte se ještě trochu severněji a poznačte si pro bonusové body kam doraz
 Biblický kvíz
 Posilovna
 Focení zvířátek
+Přepsat nějakou delší písničku slovo od slova z paměti
