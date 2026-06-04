@@ -94,3 +94,5 @@ Biblický kvíz
 Posilovna
 Focení zvířátek
 Přepsat nějakou delší písničku slovo od slova z paměti
+Nakoupit jídlo na oheň
+
