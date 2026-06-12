@@ -260,7 +260,7 @@ body {
 
 /* Individual card in grid */
 .grid-card {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 4;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
   -webkit-user-select: none;
@@ -273,22 +273,36 @@ body {
 }
 
 .grid-card .card-oval {
-  width: 52%;
-  height: 46%;
+  width: 80%;
+  height: 60%;
 }
 
 .grid-card .corner { font-size: 0.85rem; }
 
-.grid-number {
-  font-size: 1.8rem;
-  font-weight: 900;
+.grid-name {
+  font-size: 0.6rem;
+  font-weight: 800;
   color: var(--black);
-  line-height: 1;
+  line-height: 1.2;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.grid-dist {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--black);
+  opacity: 0.65;
+  margin-top: 2px;
 }
 
 .grid-lock {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1;
+  margin-bottom: 2px;
 }
 
 /* Status badges */
@@ -821,6 +835,150 @@ body {
 }
 
 .modal-actions .btn { flex: 1; }
+
+/* ════════════════════════════════════════════════════
+   VIEW TOGGLE BUTTON
+   ════════════════════════════════════════════════════ */
+.btn-view-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  color: var(--white);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════
+   MAP / RADAR VIEW
+   ════════════════════════════════════════════════════ */
+.map-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 8px 100px;
+  gap: 20px;
+  width: 100%;
+}
+
+.map-radar {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ring-outer { width: 85%; height: 85%; }
+.ring-inner { width: 42%; height: 42%; }
+
+.radar-you {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: var(--white);
+  z-index: 2;
+  background: rgba(255,255,255,0.2);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255,255,255,0.6);
+}
+
+.compass-label {
+  position: absolute;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+}
+.compass-n { top: 5px;    left: 50%; transform: translateX(-50%); }
+.compass-s { bottom: 5px; left: 50%; transform: translateX(-50%); }
+.compass-e { right: 7px;  top: 50%;  transform: translateY(-50%); }
+.compass-w { left: 7px;   top: 50%;  transform: translateY(-50%); }
+
+.map-marker {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1.5px solid var(--black);
+  box-shadow: 1px 1px 0 var(--black);
+  z-index: 3;
+  color: var(--black);
+}
+.map-marker[data-done]::after {
+  content: '✓';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: 0.5rem;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--black);
+}
+
+.bg-red    { background: var(--red);    color: #fff; }
+.bg-blue   { background: var(--blue);   color: #fff; }
+.bg-green  { background: var(--green);  color: #fff; }
+.bg-yellow { background: var(--yellow); color: var(--black); }
+.bg-locked { background: var(--slate);  color: rgba(255,255,255,0.7); }
+
+.map-hint {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 0 24px;
+}
+
+.map-unknown-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.map-unknown-chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border: 1.5px solid var(--black);
+  cursor: pointer;
+  box-shadow: 1px 1px 0 var(--black);
+}
 
 /* ════════════════════════════════════════════════════
    TABLET / DESKTOP (centred layout)

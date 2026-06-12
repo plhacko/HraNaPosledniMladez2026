@@ -44,6 +44,7 @@
   <div id="screen-overview" class="screen hidden">
     <header class="app-header">
       <span class="app-title">Mládež 2026</span>
+      <button id="btn-view-toggle" class="btn-view-toggle" title="Přepnout pohled">🗺</button>
       <span id="progress-chip" class="progress-chip">0 / 10</span>
     </header>
     <div id="score-row" class="score-row">
@@ -52,6 +53,19 @@
       <span id="bonus-display">+0 bonus</span>
     </div>
     <div id="cards-grid" class="cards-grid"></div>
+    <div id="map-view" class="map-view hidden">
+      <div class="map-radar">
+        <span class="compass-label compass-n">S</span>
+        <span class="compass-label compass-s">J</span>
+        <span class="compass-label compass-e">V</span>
+        <span class="compass-label compass-w">Z</span>
+        <div class="radar-ring ring-outer"></div>
+        <div class="radar-ring ring-inner"></div>
+        <div class="radar-you">●</div>
+      </div>
+      <p id="map-hint" class="map-hint">Nejprve ověř svou polohu tlačítkem níže</p>
+      <div id="map-unknown-list" class="map-unknown-list"></div>
+    </div>
     <div class="sticky-bar">
       <button id="btn-check-location" class="btn btn-red full-width">
         📍 Zkontrolovat moji polohu

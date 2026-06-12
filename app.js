@@ -12,6 +12,8 @@ const COLORS       = ['red', 'blue', 'green', 'yellow'];
 
 let activeId = null;
 const nearbyIds = new Set();
+let userPos = null;        // { lat, lng } — set whenever checkAll() succeeds
+let mapViewActive = false;
 
 // ─── Storage helpers ─────────────────────────────────────────────────────────
 
@@ -94,6 +96,21 @@ function renderScore() {
 
 function colorOf(id) { return COLORS[(id - 1) % COLORS.length]; }
 
+function fmtDist(loc) {
+  if (!userPos || loc.lat === null) return '';
+  const d = distM(userPos.lat, userPos.lng, loc.lat, loc.lng);
+  return d < 1000 ? `${Math.round(d)} m` : `${(d / 1000).toFixed(1)} km`;
+}
+
+function bearingDeg(lat1, lng1, lat2, lng2) {
+  const r = d => d * Math.PI / 180;
+  const dLng = r(lng2 - lng1);
+  const y = Math.sin(dLng) * Math.cos(r(lat2));
+  const x = Math.cos(r(lat1)) * Math.sin(r(lat2))
+           - Math.sin(r(lat1)) * Math.cos(r(lat2)) * Math.cos(dLng);
+  return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+}
+
 function renderCards() {
   const grid = document.getElementById('cards-grid');
   const done = getDone();
@@ -112,13 +129,14 @@ function renderCards() {
     card.className = `uno-card grid-card color-${color}`;
     card.dataset.id = loc.id;
 
+    const dist = fmtDist(loc);
     card.innerHTML = `
       <span class="corner tl">${loc.id}</span>
       <div class="card-oval${locked ? ' oval-locked' : ''}">
         <div class="card-oval-inner">
           ${locked
-            ? `<span class="grid-lock">🔒</span>`
-            : `<span class="grid-number">${loc.id}</span>`}
+            ? `<span class="grid-lock">🔒</span><span class="grid-name">${loc.name}</span>`
+            : `<span class="grid-name">${loc.name}</span>${dist ? `<span class="grid-dist">${dist}</span>` : ''}`}
         </div>
       </div>
       <span class="corner br">${loc.id}</span>
@@ -157,6 +175,67 @@ function renderCards() {
     `${done.length} / ${LOCATIONS.length}`;
 
   renderScore();
+  if (mapViewActive) renderMapView();
+}
+
+function renderMapView() {
+  const radar = document.querySelector('.map-radar');
+  const hint  = document.getElementById('map-hint');
+  const unknownList = document.getElementById('map-unknown-list');
+
+  // Clear previous markers (keep compass labels, rings, and you-dot)
+  radar.querySelectorAll('.map-marker').forEach(el => el.remove());
+  unknownList.innerHTML = '';
+
+  const done    = getDone();
+  const skipped = getGeoSkipped();
+
+  if (!userPos) {
+    hint.classList.remove('hidden');
+    return;
+  }
+  hint.classList.add('hidden');
+
+  const RADAR_R = 120; // px, half of 280px radar minus margin
+
+  // Determine scale: farthest located task, minimum 500 m
+  const located = LOCATIONS.filter(l => l.lat !== null);
+  const maxDist = Math.max(500, ...located.map(l => distM(userPos.lat, userPos.lng, l.lat, l.lng)));
+
+  LOCATIONS.forEach(loc => {
+    const finished   = done.includes(loc.id);
+    const nearby     = nearbyIds.has(loc.id);
+    const geoSkipped = skipped.includes(loc.id);
+    const noGeoNeeded = loc.lat === null;
+    const locked     = !finished && !nearby && !geoSkipped && !noGeoNeeded;
+    const color      = locked ? 'locked' : colorOf(loc.id);
+
+    if (loc.lat === null) {
+      // Unknown location — show as chip below radar
+      const chip = document.createElement('div');
+      chip.className = `map-unknown-chip bg-${color}`;
+      chip.textContent = `${loc.id}. ${loc.name}`;
+      chip.addEventListener('click', () => openDetail(loc.id));
+      unknownList.appendChild(chip);
+      return;
+    }
+
+    const dist    = distM(userPos.lat, userPos.lng, loc.lat, loc.lng);
+    const bearing = bearingDeg(userPos.lat, userPos.lng, loc.lat, loc.lng);
+    const r       = Math.min(dist / maxDist, 1) * RADAR_R * 0.85;
+    const bRad    = bearing * Math.PI / 180;
+    const x       = r * Math.sin(bRad);
+    const y       = -r * Math.cos(bRad);
+
+    const marker = document.createElement('div');
+    marker.className = `map-marker bg-${color}`;
+    marker.style.left = `calc(50% + ${x.toFixed(1)}px)`;
+    marker.style.top  = `calc(50% + ${y.toFixed(1)}px)`;
+    marker.textContent = loc.id;
+    if (finished) marker.dataset.done = '1';
+    marker.addEventListener('click', () => openDetail(loc.id));
+    radar.appendChild(marker);
+  });
 }
 
 // ─── Detail view ─────────────────────────────────────────────────────────────
@@ -285,6 +364,7 @@ async function checkAll() {
   try {
     const pos = await getPos();
     const { latitude: lat, longitude: lng } = pos.coords;
+    userPos = { lat, lng };
     LOCATIONS.forEach(loc => {
       if (isDone(loc.id) || loc.lat === null) return;
       const d = distM(lat, lng, loc.lat, loc.lng);
@@ -553,6 +633,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Overview
   document.getElementById('btn-check-location')
     .addEventListener('click', checkAll);
+
+  document.getElementById('btn-view-toggle').addEventListener('click', () => {
+    mapViewActive = !mapViewActive;
+    const btn = document.getElementById('btn-view-toggle');
+    btn.textContent = mapViewActive ? '⊞' : '🗺';
+    document.getElementById('cards-grid').classList.toggle('hidden', mapViewActive);
+    document.getElementById('map-view').classList.toggle('hidden', !mapViewActive);
+    if (mapViewActive) renderMapView();
+  });
 
   // Detail
   document.getElementById('btn-back').addEventListener('click', () => {
