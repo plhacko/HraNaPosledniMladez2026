@@ -67,7 +67,7 @@ function distM(lat1, lng1, lat2, lng2) {
 // ─── Geolocation ─────────────────────────────────────────────────────────────
 
 function getPos() {
-  return new Promise((resolve, reject) => {
+  const geo = new Promise((resolve, reject) => {
     if (!navigator.geolocation) { reject(new Error('no-geo')); return; }
     navigator.geolocation.getCurrentPosition(resolve, reject, {
       enableHighAccuracy: true,
@@ -75,6 +75,10 @@ function getPos() {
       maximumAge: 5_000,
     });
   });
+  const deadline = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('timeout')), 14_000)
+  );
+  return Promise.race([geo, deadline]);
 }
 
 // ─── Screens ─────────────────────────────────────────────────────────────────
@@ -371,7 +375,15 @@ async function checkAll() {
       if (d <= PROXIMITY_M) nearbyIds.add(loc.id);
       else nearbyIds.delete(loc.id);
     });
-  } catch { /* uživatel může zkusit znovu */ }
+  } catch (err) {
+    const msg = err && err.code === 1
+      ? '⚠️ Přístup k poloze byl zamítnut'
+      : '⚠️ Polohu se nepodařilo zjistit';
+    btn.disabled = false;
+    btn.textContent = msg;
+    setTimeout(() => { btn.textContent = '📍 Zkontrolovat moji polohu'; }, 3500);
+    return;
+  }
 
   btn.disabled = false;
   btn.textContent = '📍 Zkontrolovat moji polohu';
