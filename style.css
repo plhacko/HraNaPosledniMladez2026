@@ -233,7 +233,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 16px 12px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -254,8 +254,8 @@ body {
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 20px 16px;
+  gap: 12px;
+  padding: 16px 8px;
 }
 
 /* Individual card in grid */
@@ -327,7 +327,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px 16px 20px;
+  padding: 8px 8px 20px;
   background: linear-gradient(to bottom, transparent 0%, var(--navy) 38%);
 }
 
@@ -354,17 +354,20 @@ body {
   height: auto;
   flex-shrink: 0;
   margin-top: 8px;
-  padding: 44px 14px;
+  padding: 44px 6px;
+  border-width: 1.5px;
+  box-shadow: 2px 2px 0 var(--black);
 }
 
 .detail-card .corner { font-size: 1.3rem; }
 
 /* Detail oval: pill shape, grows with content */
 .detail-oval {
-  width: 88%;
+  width: 96%;
   height: auto;
   transform: none;
   border-radius: 60px;
+  border-width: 1.5px;
 }
 
 .detail-oval .card-oval-inner {
