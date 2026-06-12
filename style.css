@@ -411,14 +411,43 @@ body {
 /* Paragraphs containing <em> = flavour / literary quotes */
 .task-text p:has(em),
 .task-intro p:has(em) {
+  position: relative;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.55;
   opacity: 0.6;
   text-align: left;
-  border-left: 2px solid rgba(0,0,0,0.2);
-  padding-left: 8px;
   margin-bottom: 10px;
+}
+
+/* Opening oval — top-right of the first em-paragraph in each sequence */
+.task-text p:has(em):not(p:has(em) + p:has(em))::before,
+.task-intro p:has(em):not(p:has(em) + p:has(em))::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 18px;
+  height: 24px;
+  background: rgba(0,0,0,0.1);
+  border: 1.5px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+/* Closing oval — bottom-left of the last em-paragraph in each sequence */
+.task-text p:has(em):not(:has(~ p:has(em)))::after,
+.task-intro p:has(em):not(:has(~ p:has(em)))::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: -7px;
+  width: 18px;
+  height: 24px;
+  background: rgba(0,0,0,0.1);
+  border: 1.5px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transform: rotate(-20deg);
 }
 
 /* Plain paragraphs = task instructions */
