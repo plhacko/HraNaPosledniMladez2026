@@ -231,11 +231,12 @@ function renderMapView() {
     const x       = r * Math.sin(bRad);
     const y       = -r * Math.cos(bRad);
 
+    const distLabel = dist < 1000 ? `${Math.round(dist)} m` : `${(dist / 1000).toFixed(1)} km`;
     const marker = document.createElement('div');
     marker.className = `map-marker bg-${color}`;
     marker.style.left = `calc(50% + ${x.toFixed(1)}px)`;
     marker.style.top  = `calc(50% + ${y.toFixed(1)}px)`;
-    marker.textContent = loc.id;
+    marker.innerHTML = `<span class="marker-id">${loc.id}</span><span class="marker-dist">${distLabel}</span>`;
     if (finished) marker.dataset.done = '1';
     marker.addEventListener('click', () => openDetail(loc.id));
     radar.appendChild(marker);

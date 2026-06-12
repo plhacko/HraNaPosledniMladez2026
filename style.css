@@ -916,20 +916,33 @@ body {
 
 .map-marker {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  width: 36px;
+  border-radius: 10px;
   transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
-  font-weight: 900;
   cursor: pointer;
   border: 1.5px solid var(--black);
   box-shadow: 1px 1px 0 var(--black);
   z-index: 3;
-  color: var(--black);
+  padding: 3px 2px 2px;
+  gap: 1px;
+}
+
+.marker-id {
+  font-size: 0.65rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.marker-dist {
+  font-size: 0.48rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.85;
+  white-space: nowrap;
 }
 .map-marker[data-done]::after {
   content: '✓';
