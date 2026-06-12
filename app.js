@@ -647,15 +647,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-check-location')
     .addEventListener('click', checkAll);
 
-  // Ensure map is hidden on init regardless of CSS cache state
-  document.getElementById('map-view').style.display = 'none';
-
   document.getElementById('btn-view-toggle').addEventListener('click', () => {
     mapViewActive = !mapViewActive;
     const btn = document.getElementById('btn-view-toggle');
     btn.textContent = mapViewActive ? '⊞' : '🗺';
-    document.getElementById('cards-grid').style.display = mapViewActive ? 'none' : '';
-    document.getElementById('map-view').style.display  = mapViewActive ? 'flex' : 'none';
+    document.getElementById('cards-grid').classList.toggle('hidden', mapViewActive);
+    document.getElementById('map-view').classList.toggle('hidden', !mapViewActive);
     if (mapViewActive) renderMapView();
   });
 
