@@ -354,9 +354,12 @@ body {
   height: auto;
   flex-shrink: 0;
   margin-top: 8px;
-  padding: 44px 6px;
+  padding: 28px 6px;
   border-width: 1.5px;
   box-shadow: 2px 2px 0 var(--black);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .detail-card .corner { font-size: 1.3rem; }
@@ -364,6 +367,7 @@ body {
 /* Detail oval: pill shape, grows with content */
 .detail-oval {
   width: 96%;
+  flex: 1;
   height: auto;
   transform: none;
   border-radius: 60px;
