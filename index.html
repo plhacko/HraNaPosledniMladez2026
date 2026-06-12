@@ -44,8 +44,13 @@
   <div id="screen-overview" class="screen hidden">
     <header class="app-header">
       <span class="app-title">Mládež 2026</span>
-      <span id="progress-chip" class="progress-chip">0 / 12</span>
+      <span id="progress-chip" class="progress-chip">0 / 10</span>
     </header>
+    <div id="score-row" class="score-row">
+      <span id="pts-display">0 b.</span>
+      <span class="score-sep">|</span>
+      <span id="bonus-display">+0 bonus</span>
+    </div>
     <div id="cards-grid" class="cards-grid"></div>
     <div class="sticky-bar">
       <button id="btn-check-location" class="btn btn-red full-width">
@@ -65,9 +70,17 @@
         <div class="card-oval detail-oval">
           <div class="card-oval-inner">
 
+            <h3 id="detail-task-name" class="detail-task-name"></h3>
+
             <div id="state-checking" class="detail-state">
               <span class="state-icon">⏳</span>
               <p class="state-text">Zjišťuji polohu…</p>
+            </div>
+
+            <div id="state-timelocked" class="detail-state hidden">
+              <span class="state-icon">⏰</span>
+              <p id="timelocked-text" class="state-text">Karta bude dostupná ve 20:00</p>
+              <button id="btn-timelock-retry" class="btn btn-dark">Zkusit znovu</button>
             </div>
 
             <div id="state-far" class="detail-state hidden">
@@ -77,13 +90,24 @@
             </div>
 
             <div id="state-near" class="detail-state hidden">
-              <p id="detail-task-text" class="task-text"></p>
+              <div id="detail-task-text" class="task-text"></div>
               <button id="btn-complete" class="btn btn-green-solid">Označit jako splněné ✓</button>
+            </div>
+
+            <div id="state-quiz" class="detail-state hidden">
+              <div id="quiz-content"></div>
+            </div>
+
+            <div id="state-form" class="detail-state hidden">
+              <div id="form-content"></div>
             </div>
 
             <div id="state-done" class="detail-state hidden">
               <span class="state-icon">✅</span>
               <p class="state-text">Úkol splněn!</p>
+              <p id="state-done-pts" class="state-subtext"></p>
+              <p id="state-done-bonus" class="state-subtext state-bonus-hint"></p>
+              <p id="state-done-geoskip" class="state-subtext state-warn hidden">⚠ geolokace přeskočena</p>
             </div>
 
           </div>
@@ -111,6 +135,21 @@
       <h2 class="done-title">Všechna stanoviště splněna!</h2>
       <p class="done-subtitle">Gratulujeme, Mládeži 2026!</p>
       <button id="btn-reset" class="btn btn-red">Hrát znovu</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       MODAL: Panel pořadatele
+  ══════════════════════════════════════════════════ -->
+  <div id="judge-modal" class="modal hidden">
+    <div class="modal-card">
+      <h3 class="modal-title">Panel pořadatele</h3>
+      <p class="modal-subtitle">Zadejte bonusové body za splněné úkoly</p>
+      <div id="judge-list" class="judge-list"></div>
+      <div class="modal-actions">
+        <button id="btn-judge-save" class="btn btn-green-solid">Uložit</button>
+        <button id="btn-judge-close" class="btn btn-outline">Zavřít</button>
+      </div>
     </div>
   </div>
 
