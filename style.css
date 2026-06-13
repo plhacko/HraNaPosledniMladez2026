@@ -278,13 +278,18 @@ body {
   height: 75%;
 }
 
+.grid-card .card-oval-inner {
+  padding: 4px;
+  gap: 4px;
+}
+
 .grid-card .corner { font-size: 0.85rem; }
 
 .grid-name {
-  font-size: 0.6rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 900;
   color: var(--black);
-  line-height: 1.2;
+  line-height: 1.15;
   text-align: center;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -293,17 +298,21 @@ body {
 }
 
 .grid-dist {
-  font-size: 0.55rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--black);
-  opacity: 0.65;
-  margin-top: 2px;
+  opacity: 0.6;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.15);
+  width: 70%;
+  text-align: center;
 }
 
 .grid-lock {
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 /* Status badges */

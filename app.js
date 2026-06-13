@@ -341,6 +341,7 @@ async function checkDetailPos() {
   try {
     const pos = await getPos();
     const { latitude: lat, longitude: lng } = pos.coords;
+    userPos = { lat, lng };
     const d = distM(lat, lng, loc.lat, loc.lng);
 
     if (d <= PROXIMITY_M) {
