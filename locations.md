@@ -10,12 +10,23 @@ Otázka je těžká, proto vezměte co největší kámen a vyneste ho až na vr
 
 5 bodů + 5, pokud byl váš kámen největší
 
-## Turista
-- Václavské náměstí
+## Rubikon
 
-Rádi cestujeme a poznáváme svět, přesto se snažíme nevypadat jako turisti. Dnes ale turisti budete. Nechte se skupinově vyfotit u Orloje, ale abyste to s tím turismem moc nepřeháněli, nesmí na něm ten orloj být.
+**A:** Neoženíš se, jsi-li trochu při smyslech, a nezanecháš tohoto svého žití. Neboť já, jenž k tobě mluvím, oženil jsem se — proto ti radím: neber si ženu!
+<br>
+**B:** Věc je rozhodnuta a usnesena. Ať jsou kostky vrženy!
+<br>
+**A:** Nuž dobrá, jdi. Však dej ti nebe vyjít z toho zdráv.
+Na pravé moře nesnází se nyní vydáváš —
+ne libyjské, ne egejské, ni sicilské,
+kde ze třiceti lodí tři se zachrání —
+žádný ženatý muž nebyl nikdy zachráněn!
+<br>
+Menandros 342/41 – c. 290 BC
 
-5 bodů
+Caesar sice jen cituje Maedera, ale **alea iacta est**, je čas překročit Rubicon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.
+
+10 bodů
 
 ## Ve zdravém těle zdravý duch
 - frisbee loučka
@@ -79,8 +90,9 @@ a neuzrají v čin.
 
 10 bodů
 
-## HolKa
+## Císařova louka
 - most Holešovice Karlín
+- nový název pr Holka TODO: přepsat text
 
 HolKa (lávka mezi Holešovicemi a Karlínem) je moc hezká lávka a je to také nejsevernější stanoviště a za to samotné byste měli dostat nějaké ty body a tady je máte 5, zcela zadarmo. Ale nešlo by jít ještě dál? Sever! Narnie!?
 
