@@ -1,5 +1,4 @@
 // locations.js – Mládež 2026
-// lat/lng: null = souřadnice zatím nejsou určeny (TODO: doplnit souřadnice)
 
 const LOCATIONS = [
   {
@@ -18,31 +17,6 @@ const LOCATIONS = [
 
   {
     id: 2,
-    name: "Turista",
-    lat: 50.0869053,
-    lng: 14.4207600,
-    type: "self-report",
-    basePoints: 5,
-    maxBonus: 0,
-    bonusDesc: null,
-    task: `<p>Rádi cestujeme a poznáváme svět, přesto se snažíme nevypadat jako turisti. Dnes ale turisti budete. Nechte se skupinově vyfotit u Orloje, ale abyste to s tím turismem moc nepřeháněli, nesmí na něm ten orloj být.</p>
-<p><strong>5 bodů</strong></p>`,
-  },
-
-  {
-    id: 3,
-    name: "Ve zdravém těle zdravý duch",
-    lat: null, lng: null, // TODO: doplnit souřadnice (frisbee loučka)
-    type: "self-report",
-    timeLock: "20:00",
-    basePoints: 0,
-    maxBonus: 10,
-    bonusDesc: "5/7/10 bodů dle výsledku (rozhodují pořadatelé)",
-    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 10 bodů, ostatní 5. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 7.</p>`,
-  },
-
-  {
-    id: 4,
     name: "Být či nebýt",
     lat: 50.0706122,
     lng: 14.4248303,
@@ -95,36 +69,58 @@ a neuzrají v čin.</em></p>
   },
 
   {
-    id: 5,
-    name: "HolKa",
-    lat: 50.0963936,
-    lng: 14.4459069,
+    id: 3,
+    name: "Nová Holka",
+    lat: 50.0645483,
+    lng: 14.4129050,
     type: "self-report",
     basePoints: 5,
     maxBonus: 5,
     bonusDesc: "+5 nejdál na sever / +3 druhé místo",
-    task: `<p>HolKa (lávka mezi Holešovicemi a Karlínem) je moc hezká lávka a je to také nejsevernější stanoviště, a za to samotné byste měli dostat nějaké ty body – a tady je máte, 5, zcela zadarmo. Ale nešlo by jít ještě dál? Sever! Narnie!?</p>
+    task: `<p>Nová Holka je moc hezká lávka a je to také nejsevernější stanoviště, a za to samotné byste měli dostat nějaké ty body – a tady je máte, 5, zcela zadarmo. Ale nešlo by jít ještě dál? Sever! Narnie!?</p>
 <p>Vydejte se ještě trochu severněji a poznačte si pro bonusové body kam dorazíte (pošlete Adamovi odkaz na Mapy.cz na bod kam nejseverněji jste se dostali).</p>
 <p><strong>5 bodů</strong> + 5 bodů pokud dojdete nejdál ze všech ostatních skupin na sever (3 body za druhé místo)</p>`,
   },
 
   {
-    id: 6,
-    name: "Mind meld",
-    lat: null, lng: null, // TODO: doplnit souřadnice
+    id: 4,
+    name: "Rubikon",
+    lat: 50.0667264,
+    lng: 14.4285369,
     type: "self-report",
-    basePoints: 5,
+    basePoints: 10,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Všechny vztahy jsou krom jiného také dlouhá řada kompromisů. Obvykle stačí aby jedna strana vyřkla návrh, který přijde té druhé akceptovatelný. Občas je ale problém i to, aby někdo nevypadal jako ten iniciátor – viz projekt <a href="https://cs.wikipedia.org/wiki/Sojuz-Apollo" target="_blank" rel="noopener">Sojuz–Apollo</a>.</p>
-<p>Proto určete dvojici, oba pak vyřkněte bez předchozí domluvy náhodné slovo – pokud se shodují (počítají se i synonyma), vyhráváte. Jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.</p>
-<p><strong>5 bodů</strong></p>`,
+    task: `<p><strong>A:</strong> Neoženíš se, jsi-li trochu při smyslech, a nezanecháš tohoto svého žití. Neboť já, jenž k tobě mluvím, oženil jsem se — proto ti radím: neber si ženu!<br>
+<strong>B:</strong> Věc je rozhodnuta a usnesena. Ať jsou kostky vrženy!<br>
+<strong>A:</strong> Nuž dobrá, jdi. Však dej ti nebe vyjít z toho zdráv.<br>
+Na pravé moře nesnází se nyní vydáváš —<br>
+ne libyjské, ne egejské, ni sicilské,<br>
+kde ze třiceti lodí tři se zachrání —<br>
+žádný ženatý muž nebyl nikdy zachráněn!<br>
+<em>— Menandros 342/41 – c. 290 BC</em></p>
+<p>Caesar sice jen cituje Menandra, ale <strong>alea iacta est</strong>, je čas překročit Rubikon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.</p>
+<p><strong>10 bodů</strong></p>`,
   },
 
   {
-    id: 7,
+    id: 5,
+    name: "Ve zdravém těle zdravý duch",
+    lat: 50.0636781,
+    lng: 14.4172503,
+    type: "self-report",
+    timeLock: "20:00",
+    basePoints: 0,
+    maxBonus: 10,
+    bonusDesc: "5/7/10 bodů dle výsledku (rozhodují pořadatelé)",
+    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 10 bodů, ostatní 5. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 7.</p>`,
+  },
+
+  {
+    id: 6,
     name: "Mauglí",
-    lat: null, lng: null, // TODO: doplnit souřadnice (jungle gym)
+    lat: 50.0549481,
+    lng: 14.4188994,
     type: "self-report",
     basePoints: 5,
     maxBonus: 0,
@@ -136,22 +132,10 @@ a neuzrají v čin.</em></p>
   },
 
   {
-    id: 8,
-    name: "Piš barde skládej",
-    lat: null, lng: null, // TODO: doplnit souřadnice
-    type: "form",
-    basePoints: 0,
-    maxBonus: 10,
-    bonusDesc: "0–10 bodů dle správnosti textu (rozhodují pořadatelé)",
-    task: `<p><em>PTÁČEK: No jo, to je on. Ale že já bych po něm pojmenoval důl? To je nesmysl! Ledaže by ho ode mne koupil. Ale že by mu ty básničky tak vynášely? Možné to je. Když bude mít dost peněz, klidně mu ho prodám. Piš, barde, střádej, a až budeš mít dvacet miliónů, přijde den, zúčtujem spolu.</em><br>
-— Posel světla, Jára Cimrman</p>
-<p>Vyberte si písničku, která má alespoň tři sloky a přepište ji do textboxu níže. Za každé slovo špatně ztrácíte jeden bod. Během plnění úkolu <strong>nedohledávejte</strong> text vámi zvolené písně.</p>`,
-  },
-
-  {
-    id: 9,
+    id: 7,
     name: "U řek babylonských jsme sedávali",
-    lat: null, lng: null, // TODO: doplnit souřadnice (u řeky)
+    lat: 50.0502575,
+    lng: 14.4125242,
     type: "quiz",
     basePoints: 0,
     maxBonus: 0,
@@ -210,9 +194,38 @@ nade všechny mé rozkoše!</em><br>
   },
 
   {
+    id: 8,
+    name: "Mind Meld",
+    lat: 50.0497681,
+    lng: 14.4176258,
+    type: "self-report",
+    basePoints: 5,
+    maxBonus: 0,
+    bonusDesc: null,
+    task: `<p>Všechny vztahy jsou krom jiného také dlouhá řada kompromisů. Obvykle stačí aby jedna strana vyřkla návrh, který přijde té druhé akceptovatelný. Občas je ale problém i to, aby někdo nevypadal jako ten iniciátor – viz projekt <a href="https://cs.wikipedia.org/wiki/Sojuz-Apollo" target="_blank" rel="noopener">Sojuz–Apollo</a>.</p>
+<p>Proto určete dvojici, oba pak vyřkněte bez předchozí domluvy náhodné slovo – pokud se shodují (počítají se i synonyma), vyhráváte. Jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.</p>
+<p><strong>5 bodů</strong></p>`,
+  },
+
+  {
+    id: 9,
+    name: "Piš barde skládej",
+    lat: 50.0520775,
+    lng: 14.4268969,
+    type: "form",
+    basePoints: 0,
+    maxBonus: 10,
+    bonusDesc: "0–10 bodů dle správnosti textu (rozhodují pořadatelé)",
+    task: `<p><em>PTÁČEK: No jo, to je on. Ale že já bych po něm pojmenoval důl? To je nesmysl! Ledaže by ho ode mne koupil. Ale že by mu ty básničky tak vynášely? Možné to je. Když bude mít dost peněz, klidně mu ho prodám. Piš, barde, střádej, a až budeš mít dvacet miliónů, přijde den, zúčtujem spolu.</em><br>
+— Posel světla, Jára Cimrman</p>
+<p>Vyberte si písničku, která má alespoň tři sloky a přepište ji do textboxu níže. Za každé slovo špatně ztrácíte jeden bod. Během plnění úkolu <strong>nedohledávejte</strong> text vámi zvolené písně.</p>`,
+  },
+
+  {
     id: 10,
     name: "Polyfémos",
-    lat: null, lng: null, // TODO: doplnit souřadnice
+    lat: 50.0669692,
+    lng: 14.4147444,
     type: "self-report",
     basePoints: 7,
     maxBonus: 0,
