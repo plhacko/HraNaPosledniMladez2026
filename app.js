@@ -598,7 +598,7 @@ function renderSongForm(loc) {
   });
 
   document.getElementById('btn-mark-sent').addEventListener('click', () => {
-    markDone(activeId, 0);
+    markDone(activeId, loc.basePoints);
     nearbyIds.delete(activeId);
     updateDoneState(loc);
     setState('done');
