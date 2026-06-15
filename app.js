@@ -500,13 +500,24 @@ function submitQuiz() {
 
   const pts = correct * 2;
   const submitBtn = document.getElementById('btn-quiz-submit');
-  submitBtn.disabled = true;
-  submitBtn.textContent = `Odesláno`;
+
+  loc.quiz.forEach((q, qi) => {
+    if (!q.reason) return;
+    const qEl = document.querySelectorAll('.quiz-question')[qi];
+    const reasonEl = document.createElement('p');
+    reasonEl.className = 'quiz-reason';
+    reasonEl.textContent = q.reason;
+    qEl.appendChild(reasonEl);
+  });
+
+  submitBtn.remove();
+
+  const container = document.getElementById('quiz-content');
 
   const result = document.createElement('p');
   result.className = 'quiz-result';
   result.textContent = `${correct} / ${loc.quiz.length} správně → ${pts} bodů`;
-  submitBtn.before(result);
+  container.appendChild(result);
 
   const doneBtn = document.createElement('button');
   doneBtn.className = 'btn btn-green-solid';
@@ -520,7 +531,7 @@ function submitQuiz() {
     renderCards();
     setTimeout(checkAllDone, 900);
   });
-  submitBtn.after(doneBtn);
+  container.appendChild(doneBtn);
 }
 
 // ─── Song form (task 8) ───────────────────────────────────────────────────────

@@ -166,21 +166,25 @@ nade všechny mé rozkoše!</em><br>
         q: "Kolik párů ovcí vzal Noe do archy?",
         options: ["1", "2", "7"],
         correct: 2,
+        reason: "7 párů – ovce jsou čistá zvířata, proto jich Noe vzal 7 párů; nečistých zvířat (jako vepři) vzal jen jeden pár.",
       },
       {
         q: "Kdo byl osvobozen andělem ze žaláře ve Skutcích 12?",
         options: ["Pavel", "Petr", "Barnabáš"],
         correct: 1,
+        reason: "Petr – anděl ho v noci vyvedl ze žaláře, kde byl uvězněn Herodem.",
       },
       {
         q: "Kdo jako první uviděl vzkříšeného Ježíše?",
         options: ["Petr", "Marie Magdaléna", "Jan"],
         correct: 1,
+        reason: "Marie Magdaléna – přišla jako první ráno k hrobu a setkala se se vzkříšeným Ježíšem.",
       },
       {
         q: "Která kniha Nového zákona byla napsána jako první?",
         options: ["Evangelium podle Matouše", "Skutky apoštolů", "1. list Tesalonickým"],
         correct: 2,
+        reason: "1. list Tesalonickým – Pavel ho napsal kolem roku 50–51 n. l., zatímco evangelia a Skutky vznikly až v 60.–90. letech.",
       },
       {
         q: "Co je podle žalmu 137 lepší než zapomenout na Jeruzalém?",
@@ -190,6 +194,7 @@ nade všechny mé rozkoše!</em><br>
           "Aby mu uschla pravice a jazyk přirostl k patru",
         ],
         correct: 2,
+        reason: `Viz verše 5–6: „Pokud zapomenu, Jeruzaléme, na tebe, pak ať mi uschne pravice! Ať mi i k patru jazyk přiroste…"`,
       },
     ],
   },
