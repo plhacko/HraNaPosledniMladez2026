@@ -1,4 +1,4 @@
-odkaz na mapu: https://mapy.com/en/zakladni?vlastni-body&ut=HolKa&ut=Chvilka%20filosofie&ut=Být%20či%20nebýt&ut=Turista&uc=9h2pAxX.b3aq-xXj4f5RyxXsHrfN3kw5&ud=Štvanická%20lávka%2C%20Prague%2C%20Prague&ud=U%20pražských%20lomů%2C%20Prague%2C%20Prague&ud=50°4%2714.204"N%2C%2014°25%2729.390"E&ud=Old%20Town%20Square%2C%20Prague%2C%20Prague&x=14.4175251&y=50.0960190&z=14
+odkaz na mapu: https://mapy.com/en/turisticka?vlastni-body&ut=Chvilka%20filosofie&ut=Být%20či%20nebýt&ut=Nová%20Holka&ut=Rubikon&ut=Ve%20zdravém%20těle%20zdravý%20duch&ut=Mauglí&ut=U%20řek%20babylonských%20jsme%20sedávali&ut=Mind%20Meld&ut=Piš%20barde%20skládej&ut=Polyfémos&uc=9g.f1xXj4f5RyxXsHr3rD3ok5sGgon3x1e9zgPLdq3erleOkgwXDehjAgrq3oVkW0&ud=U%20pražských%20lomů%2C%20Prague%2C%20Prague&ud=50°4%2714.204"N%2C%2014°25%2729.390"E&ud=50°3%2752.375"N%2C%2014°24%2746.456"E&ud=50°4%270.215"N%2C%2014°25%2742.736"E&ud=Vyšehradské%20sady%2C%20Prague%2C%20Prague&ud=50°3%2717.813"N%2C%2014°25%278.038"E&ud=Dvorecký%20most%2C%20Prague%2C%20Prague&ud=50°2%2759.165"N%2C%2014°25%273.454"E&ud=Na%20Klaudiánce%20670%2F17%2C%20Prague%2C%20147%2000%2C%20Prague&ud=50°4%271.089"N%2C%2014°24%2753.080"E&x=14.4165656&y=50.0653498&z=15
 
 
 ## Chvilka filosofie
@@ -10,7 +10,7 @@ Otázka je těžká, proto vezměte co největší kámen a vyneste ho až na vr
 
 5 bodů + 5, pokud byl váš kámen největší
 
-## Rubikon
+## Rubicon
 
 **A:** Neoženíš se, jsi-li trochu při smyslech, a nezanecháš tohoto svého žití. Neboť já, jenž k tobě mluvím, oženil jsem se — proto ti radím: neber si ženu!
 <br>
@@ -32,7 +32,7 @@ Caesar sice jen cituje Maedera, ale **alea iacta est**, je čas překročit Rubi
 - frisbee loučka
 - poznámka: tato karta je časově zamčena je možné ji splnit jen v určitý moment, pokud klikne na tuto kartu uživatel dříve, tak ho jen upozorní, že kartu lze plnit až ve 20:00
 
-Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 10 bodů, ostatní 5. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 7.
+Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 10.
 
 
 ## Být či nebýt
@@ -90,15 +90,16 @@ a neuzrají v čin.
 
 10 bodů
 
-## Císařova louka
-- most Holešovice Karlín
-- nový název pr Holka TODO: přepsat text
+## Císařský ostrov
+- je potřeba mít zde další tlačítko, které pokud zmáčnou, zjistí se jejich poloha a pokud jsou dostatečně blízko, tak získají 10 bodů. Pokud ne, napiš jim hlášku "Víc na sever/východ/západ/jih!". Po úspěchu pak získají 10 bodů.
+- v legendě je yt video, způsob, aby tam byl yt přehrávač a mohli si ho přehrát  
 
-HolKa (lávka mezi Holešovicemi a Karlínem) je moc hezká lávka a je to také nejsevernější stanoviště a za to samotné byste měli dostat nějaké ty body a tady je máte 5, zcela zadarmo. Ale nešlo by jít ještě dál? Sever! Narnie!?
+https://www.youtube.com/watch?v=GegCCMBsbqo
 
-Vydejte se ještě trochu severněji a poznačte si pro bonusové body kam dorazíte  (pošlete Adamovi odkaz na Mapy.cz na bod kam nejseverněji jste se dostali)
+Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Narnie!
 
-5 bodů + 5 bodů pokud dojdete nejdál ze všech ostatních skupin na sever (3 bodu za druhé místo).
+
+10 bodů
 
 ## Mind meld
 - asi kdekoliv
