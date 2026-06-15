@@ -1031,3 +1031,22 @@ body {
     height: auto;
   }
 }
+
+/* ════════════════════════════════════════════════════
+   DEBUG UNLOCK (hold bottom-right corner 4s)
+   ════════════════════════════════════════════════════ */
+#detail-corner-br {
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+#detail-corner-br.debug-holding {
+  animation: debug-hold 4s linear forwards;
+}
+
+@keyframes debug-hold {
+  0%   { opacity: 1;   outline: 2px solid transparent;             border-radius: 4px; }
+  10%  { outline: 2px solid rgba(255, 255, 255, 0.6); }
+  100% { opacity: 0.2; outline: 2px solid rgba(255, 255, 255, 0.6); border-radius: 4px; }
+}

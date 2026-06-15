@@ -684,4 +684,29 @@ document.addEventListener('DOMContentLoaded', () => {
     resetGame();
     show('splash');
   });
+
+  // Debug unlock: hold bottom-right corner on detail card for 4 seconds
+  const debugCorner = document.getElementById('detail-corner-br');
+  let debugTimer = null;
+
+  const cancelDebug = () => {
+    clearTimeout(debugTimer);
+    debugTimer = null;
+    debugCorner.classList.remove('debug-holding');
+  };
+
+  debugCorner.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    debugCorner.classList.add('debug-holding');
+    debugTimer = setTimeout(() => {
+      debugCorner.classList.remove('debug-holding');
+      const loc = LOCATIONS.find(l => l.id === activeId);
+      if (!loc || isDone(activeId)) return;
+      nearbyIds.add(activeId);
+      showTaskState(loc);
+    }, 4000);
+  });
+  debugCorner.addEventListener('pointerup', cancelDebug);
+  debugCorner.addEventListener('pointercancel', cancelDebug);
+  debugCorner.addEventListener('contextmenu', e => e.preventDefault());
 });
