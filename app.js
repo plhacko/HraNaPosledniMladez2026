@@ -770,29 +770,21 @@ document.addEventListener('DOMContentLoaded', () => {
     show('splash');
   });
 
-  // Debug unlock: hold bottom-right corner on detail card for 4 seconds
+  // Debug unlock: tap bottom-right corner 3 times quickly
   const debugCorner = document.getElementById('detail-corner-br');
-  let debugTimer = null;
+  let debugTapCount = 0;
+  let debugTapTimer = null;
 
-  const cancelDebug = () => {
-    clearTimeout(debugTimer);
-    debugTimer = null;
-    debugCorner.classList.remove('debug-holding');
-  };
-
-  debugCorner.addEventListener('pointerdown', e => {
-    e.preventDefault();
-    debugCorner.setPointerCapture(e.pointerId);
-    debugCorner.classList.add('debug-holding');
-    debugTimer = setTimeout(() => {
-      debugCorner.classList.remove('debug-holding');
-      const loc = LOCATIONS.find(l => l.id === activeId);
-      if (!loc || isDone(activeId)) return;
-      nearbyIds.add(activeId);
-      showTaskState(loc);
-    }, 4000);
+  debugCorner.addEventListener('click', () => {
+    debugTapCount++;
+    clearTimeout(debugTapTimer);
+    debugTapTimer = setTimeout(() => { debugTapCount = 0; }, 1500);
+    if (debugTapCount >= 3) {
+      debugTapCount = 0;
+      clearTimeout(debugTapTimer);
+      if (activeId === null || isDone(activeId)) return;
+      addUnlocked(activeId);
+      openDetail(activeId);
+    }
   });
-  debugCorner.addEventListener('pointerup', cancelDebug);
-  debugCorner.addEventListener('pointercancel', cancelDebug);
-  debugCorner.addEventListener('contextmenu', e => e.preventDefault());
 });
