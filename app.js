@@ -169,22 +169,6 @@ function renderCards() {
 
     card.addEventListener('click', () => openDetail(loc.id));
 
-    // Debug geo-skip: long-press on not-yet-done cards that have real coords
-    if (!finished && !noGeoNeeded) {
-      let longPressTimer;
-      card.addEventListener('pointerdown', () => {
-        longPressTimer = setTimeout(() => {
-          if (confirm(`Přeskočit ověření polohy pro stanoviště ${loc.id}? (jen pro testování)`)) {
-            addGeoSkipped(loc.id);
-            openDetail(loc.id);
-          }
-        }, 500);
-      });
-      card.addEventListener('pointerup',    () => clearTimeout(longPressTimer));
-      card.addEventListener('pointerleave', () => clearTimeout(longPressTimer));
-      card.addEventListener('pointermove',  () => clearTimeout(longPressTimer));
-    }
-
     grid.appendChild(card);
   });
 
@@ -770,21 +754,11 @@ document.addEventListener('DOMContentLoaded', () => {
     show('splash');
   });
 
-  // Debug unlock: tap bottom-right corner 3 times quickly
+  // Debug unlock: single tap on bottom-right corner
   const debugCorner = document.getElementById('detail-corner-br');
-  let debugTapCount = 0;
-  let debugTapTimer = null;
-
   debugCorner.addEventListener('click', () => {
-    debugTapCount++;
-    clearTimeout(debugTapTimer);
-    debugTapTimer = setTimeout(() => { debugTapCount = 0; }, 1500);
-    if (debugTapCount >= 3) {
-      debugTapCount = 0;
-      clearTimeout(debugTapTimer);
-      if (activeId === null || isDone(activeId)) return;
-      addUnlocked(activeId);
-      openDetail(activeId);
-    }
+    if (activeId === null || isDone(activeId)) return;
+    addUnlocked(activeId);
+    openDetail(activeId);
   });
 });

@@ -1048,7 +1048,7 @@ body {
 }
 
 /* ════════════════════════════════════════════════════
-   DEBUG UNLOCK (triple-tap bottom-right corner)
+   DEBUG UNLOCK (single-tap bottom-right corner)
    ════════════════════════════════════════════════════ */
 #detail-corner-br {
   pointer-events: auto;
