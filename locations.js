@@ -70,21 +70,22 @@ a neuzrají v čin.</em></p>
 
   {
     id: 3,
-    name: "Nová Holka",
-    lat: 50.0645483,
-    lng: 14.4129050,
-    type: "self-report",
-    basePoints: 5,
-    maxBonus: 5,
-    bonusDesc: "+5 nejdál na sever / +3 druhé místo",
-    task: `<p>Nová Holka je moc hezká lávka a je to také nejsevernější stanoviště, a za to samotné byste měli dostat nějaké ty body – a tady je máte, 5, zcela zadarmo. Ale nešlo by jít ještě dál? Sever! Narnie!?</p>
-<p>Vydejte se ještě trochu severněji a poznačte si pro bonusové body kam dorazíte (pošlete Adamovi odkaz na Mapy.cz na bod kam nejseverněji jste se dostali).</p>
-<p><strong>5 bodů</strong> + 5 bodů pokud dojdete nejdál ze všech ostatních skupin na sever (3 body za druhé místo)</p>`,
+    name: "Císařský ostrov",
+    lat: 50.0522219,
+    lng: 14.4116989,
+    type: "geo-hunt",
+    huntLat: 50.0645600,
+    huntLng: 14.4128947,
+    videoUrl: "https://www.youtube.com/embed/GegCCMBsbqo",
+    basePoints: 10,
+    maxBonus: 0,
+    bonusDesc: null,
+    task: `<p>Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Narnie!</p>`,
   },
 
   {
     id: 4,
-    name: "Rubikon",
+    name: "Rubicon",
     lat: 50.0667264,
     lng: 14.4285369,
     type: "self-report",
@@ -113,7 +114,7 @@ kde ze třiceti lodí tři se zachrání —<br>
     basePoints: 0,
     maxBonus: 10,
     bonusDesc: "5/7/10 bodů dle výsledku (rozhodují pořadatelé)",
-    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 10 bodů, ostatní 5. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 7.</p>`,
+    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 10.</p>`,
   },
 
   {

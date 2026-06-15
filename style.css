@@ -1033,6 +1033,21 @@ body {
 }
 
 /* ════════════════════════════════════════════════════
+   GEO-HUNT (Císařský ostrov YouTube + location check)
+   ════════════════════════════════════════════════════ */
+.geo-hunt-video {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.geo-hunt-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ════════════════════════════════════════════════════
    DEBUG UNLOCK (hold bottom-right corner 4s)
    ════════════════════════════════════════════════════ */
 #detail-corner-br {

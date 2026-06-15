@@ -252,7 +252,7 @@ function renderMapView() {
 // ─── Detail view ─────────────────────────────────────────────────────────────
 
 function setState(s) {
-  ['checking', 'timelocked', 'far', 'near', 'quiz', 'form', 'done'].forEach(name => {
+  ['checking', 'timelocked', 'far', 'near', 'quiz', 'form', 'geo-hunt', 'done'].forEach(name => {
     document.getElementById(`state-${name}`).classList.toggle('hidden', name !== s);
   });
 }
@@ -309,6 +309,23 @@ function openDetail(id) {
   checkDetailPos();
 }
 
+function huntDirection(fromLat, fromLng, toLat, toLng) {
+  const bearing = bearingDeg(fromLat, fromLng, toLat, toLng);
+  if (bearing >= 315 || bearing < 45)  return 'sever';
+  if (bearing < 135) return 'východ';
+  if (bearing < 225) return 'jih';
+  return 'západ';
+}
+
+function renderGeoHunt(loc) {
+  document.getElementById('geo-hunt-video').innerHTML =
+    `<iframe src="${loc.videoUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  document.getElementById('geo-hunt-task').innerHTML = loc.task;
+  const hint = document.getElementById('geo-hunt-hint');
+  hint.textContent = '';
+  hint.classList.add('hidden');
+}
+
 function showTaskState(loc) {
   if (loc.type === 'quiz') {
     renderQuiz(loc);
@@ -316,6 +333,9 @@ function showTaskState(loc) {
   } else if (loc.type === 'form') {
     renderSongForm(loc);
     setState('form');
+  } else if (loc.type === 'geo-hunt') {
+    renderGeoHunt(loc);
+    setState('geo-hunt');
   } else {
     document.getElementById('detail-task-text').innerHTML = loc.task;
     setState('near');
@@ -689,6 +709,42 @@ document.addEventListener('DOMContentLoaded', () => {
     setState('done');
     renderCards();
     setTimeout(checkAllDone, 900);
+  });
+
+  // Geo-hunt check button
+  document.getElementById('btn-geo-hunt-check').addEventListener('click', async () => {
+    const loc = LOCATIONS.find(l => l.id === activeId);
+    if (!loc) return;
+    const btn = document.getElementById('btn-geo-hunt-check');
+    const hint = document.getElementById('geo-hunt-hint');
+    btn.disabled = true;
+    btn.textContent = '⏳ Zjišťuji…';
+    hint.classList.add('hidden');
+    try {
+      const pos = await getPos();
+      const { latitude: lat, longitude: lng } = pos.coords;
+      userPos = { lat, lng };
+      const d = distM(lat, lng, loc.huntLat, loc.huntLng);
+      if (d <= PROXIMITY_M) {
+        markDone(activeId, loc.basePoints);
+        nearbyIds.delete(activeId);
+        updateDoneState(loc);
+        setState('done');
+        renderCards();
+        setTimeout(checkAllDone, 900);
+      } else {
+        const dir = huntDirection(lat, lng, loc.huntLat, loc.huntLng);
+        hint.textContent = `Víc na ${dir}! (~${Math.round(d)} m)`;
+        hint.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = '📍 Jsem tady!';
+      }
+    } catch {
+      hint.textContent = 'Polohu se nepodařilo zjistit.';
+      hint.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = '📍 Jsem tady!';
+    }
   });
 
   // All-done screen
