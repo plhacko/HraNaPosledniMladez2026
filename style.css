@@ -1012,21 +1012,22 @@ body {
 
 .map-filter {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 56px);
   gap: 8px;
   padding: 10px 0 4px;
-  width: 100%;
+  justify-content: center;
 }
 
 .map-filter-chip {
-  aspect-ratio: 1;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font);
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--white);
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.25);
