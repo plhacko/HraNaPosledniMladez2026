@@ -15,6 +15,7 @@ let activeId = null;
 const nearbyIds = new Set();
 let userPos = null;        // { lat, lng } — set whenever checkAll() succeeds
 let mapViewActive = false;
+let detailOpenedAt = 0;
 
 // ─── Storage helpers ─────────────────────────────────────────────────────────
 
@@ -258,6 +259,7 @@ function openDetail(id) {
   document.getElementById('detail-corner-br').textContent = id;
   document.getElementById('detail-task-name').textContent = loc.name;
 
+  detailOpenedAt = Date.now();
   show('detail');
 
   if (isDone(id)) {
@@ -757,6 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Debug unlock: single tap on bottom-right corner + confirm dialog
   const debugCorner = document.getElementById('detail-corner-br');
   debugCorner.addEventListener('click', () => {
+    if (Date.now() - detailOpenedAt < 400) return; // ignore tap-through from grid
     if (activeId === null || isDone(activeId)) return;
     if (confirm(`⚠️ DEBUG ONLY ⚠️\nToto je pouze pro testování – nepoužívej během hry!\n\nPřeskočit ověření polohy pro stanoviště ${activeId}?`)) {
       addUnlocked(activeId);
