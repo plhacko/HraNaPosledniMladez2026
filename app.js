@@ -782,6 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   debugCorner.addEventListener('pointerdown', e => {
     e.preventDefault();
+    debugCorner.setPointerCapture(e.pointerId);
     debugCorner.classList.add('debug-holding');
     debugTimer = setTimeout(() => {
       debugCorner.classList.remove('debug-holding');
