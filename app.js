@@ -754,11 +754,20 @@ document.addEventListener('DOMContentLoaded', () => {
     show('splash');
   });
 
-  // Debug unlock: single tap on bottom-right corner
+  // Debug unlock: double-tap on bottom-right corner
   const debugCorner = document.getElementById('detail-corner-br');
+  let debugTapCount = 0;
+  let debugTapTimer = null;
   debugCorner.addEventListener('click', () => {
-    if (activeId === null || isDone(activeId)) return;
-    addUnlocked(activeId);
-    openDetail(activeId);
+    debugTapCount++;
+    clearTimeout(debugTapTimer);
+    debugTapTimer = setTimeout(() => { debugTapCount = 0; }, 600);
+    if (debugTapCount >= 2) {
+      debugTapCount = 0;
+      clearTimeout(debugTapTimer);
+      if (activeId === null || isDone(activeId)) return;
+      addUnlocked(activeId);
+      openDetail(activeId);
+    }
   });
 });
