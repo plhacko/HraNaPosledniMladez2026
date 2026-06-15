@@ -734,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(checkAllDone, 900);
       } else {
         const dir = huntDirection(lat, lng, loc.huntLat, loc.huntLng);
-        hint.textContent = `Víc na ${dir}! (~${Math.round(d)} m)`;
+        hint.textContent = `Víc na ${dir}!`;
         hint.classList.remove('hidden');
         btn.disabled = false;
         btn.textContent = '📍 Jsem tady!';
