@@ -754,18 +754,11 @@ document.addEventListener('DOMContentLoaded', () => {
     show('splash');
   });
 
-  // Debug unlock: double-tap on bottom-right corner
+  // Debug unlock: single tap on bottom-right corner + confirm dialog
   const debugCorner = document.getElementById('detail-corner-br');
-  let debugTapCount = 0;
-  let debugTapTimer = null;
   debugCorner.addEventListener('click', () => {
-    debugTapCount++;
-    clearTimeout(debugTapTimer);
-    debugTapTimer = setTimeout(() => { debugTapCount = 0; }, 600);
-    if (debugTapCount >= 2) {
-      debugTapCount = 0;
-      clearTimeout(debugTapTimer);
-      if (activeId === null || isDone(activeId)) return;
+    if (activeId === null || isDone(activeId)) return;
+    if (confirm(`Přeskočit ověření polohy pro stanoviště ${activeId}? (jen pro testování)`)) {
       addUnlocked(activeId);
       openDetail(activeId);
     }
