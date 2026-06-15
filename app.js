@@ -150,7 +150,7 @@ function renderCards() {
 
     const dist = fmtDist(loc);
     const timechip = (!finished && loc.timeLock)
-      ? `<span class="grid-timelock">⏰ od ${loc.timeLock}</span>`
+      ? `<span class="grid-timelock">⏰ v ${loc.timeLock}</span>`
       : '';
     card.innerHTML = `
       <span class="corner tl">${loc.id}</span>
