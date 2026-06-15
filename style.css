@@ -498,8 +498,9 @@ body {
 }
 
 .detail-state .btn-outline {
-  color: rgba(0, 0, 0, 0.45);
-  border-color: rgba(0, 0, 0, 0.2);
+  color: #555;
+  border-color: #aaa;
+  box-shadow: 2px 2px 0 #ccc;
 }
 
 /* ════════════════════════════════════════════════════
