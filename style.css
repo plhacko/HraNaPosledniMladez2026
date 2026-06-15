@@ -1051,6 +1051,7 @@ body {
    DEBUG UNLOCK (triple-tap bottom-right corner)
    ════════════════════════════════════════════════════ */
 #detail-corner-br {
+  pointer-events: auto;
   user-select: none;
   cursor: pointer;
 }
