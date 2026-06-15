@@ -1054,4 +1054,5 @@ body {
   pointer-events: auto;
   user-select: none;
   cursor: pointer;
+  z-index: 2;
 }
