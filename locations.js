@@ -200,11 +200,11 @@ nade všechny mé rozkoše!</em><br>
     lat: 50.0497681,
     lng: 14.4176258,
     type: "self-report",
+    videoUrl: "https://www.youtube.com/embed/es7Br9kJBbo",
     basePoints: 5,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Všechny vztahy jsou krom jiného také dlouhá řada kompromisů. Obvykle stačí aby jedna strana vyřkla návrh, který přijde té druhé akceptovatelný. Občas je ale problém i to, aby někdo nevypadal jako ten iniciátor – viz projekt <a href="https://cs.wikipedia.org/wiki/Sojuz-Apollo" target="_blank" rel="noopener">Sojuz–Apollo</a>.</p>
-<p>Proto určete dvojici, oba pak vyřkněte bez předchozí domluvy náhodné slovo – pokud se shodují (počítají se i synonyma), vyhráváte. Jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.</p>
+    task: `<p>Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma) vyhráváte, jinak pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.</p>
 <p><strong>5 bodů</strong></p>`,
   },
 

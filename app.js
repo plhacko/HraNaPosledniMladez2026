@@ -350,6 +350,12 @@ function showTaskState(loc) {
     renderGeoHunt(loc);
     setState('geo-hunt');
   } else {
+    const videoEl = document.getElementById('near-video');
+    if (loc.videoUrl) {
+      videoEl.innerHTML = `<iframe src="${loc.videoUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    } else {
+      videoEl.innerHTML = '';
+    }
     document.getElementById('detail-task-text').innerHTML = loc.task;
     setState('near');
   }
