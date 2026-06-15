@@ -636,8 +636,8 @@ body {
 
 .score-sep { opacity: 0.4; }
 
-#pts-display { color: #FFD900; }
-#bonus-display { color: #00996E; }
+#pts-display { color: #00996E; }
+#bonus-display { color: #FFD900; }
 
 /* ════════════════════════════════════════════════════
    DETAIL — task name heading & subtext
