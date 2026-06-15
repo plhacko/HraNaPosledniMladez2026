@@ -658,10 +658,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Detail
-  document.getElementById('btn-back').addEventListener('click', () => {
-    show('overview');
-    renderCards();
-  });
+  const goBack = () => { show('overview'); renderCards(); };
+  document.getElementById('btn-back').addEventListener('click', goBack);
+  document.getElementById('btn-back-done').addEventListener('click', goBack);
   document.getElementById('btn-retry')
     .addEventListener('click', checkDetailPos);
   document.getElementById('btn-timelock-retry').addEventListener('click', () => {
