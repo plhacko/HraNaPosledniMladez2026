@@ -104,10 +104,10 @@ Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáv�
 ## Mind meld
 - asi kdekoliv
 
-Všechny vztahy jsou krom jiného také dlouho řadou kompromisů. 
-Obvykle stačí aby jedna strana vyřkla návrh, který přijde té druhé akceptovatelný. Občas je ale problém i to, aby někdo nevypadal jako ten iniciátor viz projekt [Sojuz–Apollo](https://cs.wikipedia.org/wiki/Sojuz-Apollo).
+https://www.youtube.com/watch?v=es7Br9kJBbo
+Apollo-Soyuz Docking: July 17, 1975
 
-Proto určete dvojici, oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma) vyhráváte, jinak pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.
+Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma) vyhráváte, jinak pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.
 
 5 bodů
 
