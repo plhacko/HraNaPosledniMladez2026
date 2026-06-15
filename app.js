@@ -45,6 +45,9 @@ function unmarkDone(id) {
   const p = getPoints();
   delete p[id];
   savePoints(p);
+  const b = getBonus();
+  delete b[id];
+  saveBonus(b);
 }
 
 function markDone(id, pts) {
@@ -53,6 +56,11 @@ function markDone(id, pts) {
   if (pts !== undefined) {
     const p = getPoints();
     if (p[id] === undefined) { p[id] = pts; savePoints(p); }
+  }
+  const loc = LOCATIONS.find(l => l.id === id);
+  if (loc && loc.maxBonus > 0) {
+    const b = getBonus();
+    if (b[id] === undefined) { b[id] = loc.maxBonus; saveBonus(b); }
   }
 }
 
@@ -360,6 +368,20 @@ function showTaskState(loc) {
       videoEl.innerHTML = '';
     }
     document.getElementById('detail-task-text').innerHTML = loc.task;
+    const picker = document.getElementById('point-picker');
+    const completeBtn = document.getElementById('btn-complete');
+    if (loc.pointOptions) {
+      picker.innerHTML = loc.pointOptions.map(v =>
+        `<label class="quiz-option"><input type="radio" name="point-pick" value="${v}"> ${v} bodů</label>`
+      ).join('');
+      completeBtn.disabled = true;
+      picker.querySelectorAll('input[name="point-pick"]').forEach(inp => {
+        inp.addEventListener('change', () => { completeBtn.disabled = false; });
+      });
+    } else {
+      picker.innerHTML = '';
+      completeBtn.disabled = false;
+    }
     setState('near');
   }
 }
@@ -746,7 +768,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-complete').addEventListener('click', () => {
     if (activeId === null) return;
     const loc = LOCATIONS.find(l => l.id === activeId);
-    markDone(activeId, loc.basePoints);
+    let pts = loc.basePoints;
+    if (loc.pointOptions) {
+      const sel = document.querySelector('input[name="point-pick"]:checked');
+      if (!sel) return;
+      pts = parseInt(sel.value);
+    }
+    markDone(activeId, pts);
     nearbyIds.delete(activeId);
     updateDoneState(loc);
     setState('done');

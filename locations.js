@@ -112,8 +112,9 @@ kde ze třiceti lodí tři se zachrání —<br>
     type: "self-report",
     timeLock: "20:00",
     basePoints: 0,
-    maxBonus: 10,
-    bonusDesc: "5/7/10 bodů dle výsledku (rozhodují pořadatelé)",
+    maxBonus: 0,
+    bonusDesc: null,
+    pointOptions: [5, 7, 10],
     task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 10.</p>`,
   },
 
