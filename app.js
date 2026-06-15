@@ -6,7 +6,8 @@ const PROXIMITY_M  = 50;
 const STORAGE_KEY  = 'mladez2026_done';
 const POINTS_KEY   = 'mladez2026_points';
 const BONUS_KEY    = 'mladez2026_bonus';
-const GEO_SKIP_KEY = 'mladez2026_geo_skipped';
+const GEO_SKIP_KEY    = 'mladez2026_geo_skipped';
+const UNLOCKED_KEY    = 'mladez2026_unlocked';
 const SONG_KEY     = 'mladez2026_song';
 const COLORS       = ['red', 'blue', 'green', 'yellow'];
 
@@ -31,6 +32,10 @@ function getGeoSkipped()    { try { return JSON.parse(localStorage.getItem(GEO_S
 function addGeoSkipped(id)  { const a = getGeoSkipped(); if (!a.includes(id)) { a.push(id); localStorage.setItem(GEO_SKIP_KEY, JSON.stringify(a)); } }
 function clearGeoSkipped()  { localStorage.removeItem(GEO_SKIP_KEY); }
 
+function getUnlocked()      { try { return JSON.parse(localStorage.getItem(UNLOCKED_KEY)) || []; } catch { return []; } }
+function addUnlocked(id)    { const a = getUnlocked(); if (!a.includes(id)) { a.push(id); localStorage.setItem(UNLOCKED_KEY, JSON.stringify(a)); } }
+function clearUnlocked()    { localStorage.removeItem(UNLOCKED_KEY); }
+
 function getSongData()    { try { return JSON.parse(localStorage.getItem(SONG_KEY)) || {}; } catch { return {}; } }
 
 function markDone(id, pts) {
@@ -47,6 +52,7 @@ function clearAll() {
   localStorage.removeItem(POINTS_KEY);
   localStorage.removeItem(BONUS_KEY);
   clearGeoSkipped();
+  clearUnlocked();
 }
 
 function getTotalPoints() { return Object.values(getPoints()).reduce((s, v) => s + v, 0); }
@@ -293,6 +299,12 @@ function openDetail(id) {
     return;
   }
 
+  // Previously unlocked on-site — show task immediately
+  if (getUnlocked().includes(id)) {
+    showTaskState(loc);
+    return;
+  }
+
   setState('checking');
   checkDetailPos();
 }
@@ -346,6 +358,7 @@ async function checkDetailPos() {
 
     if (d <= PROXIMITY_M) {
       nearbyIds.add(loc.id);
+      addUnlocked(loc.id);
       showTaskState(loc);
     } else {
       document.getElementById('detail-distance-text').textContent =
