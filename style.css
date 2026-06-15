@@ -1010,6 +1010,36 @@ body {
   box-shadow: 1px 1px 0 var(--black);
 }
 
+.map-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  padding: 10px 12px 4px;
+}
+
+.map-filter-chip {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: var(--white);
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  user-select: none;
+  transition: opacity 0.15s;
+}
+
+.map-filter-chip.hidden-task {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
 /* ════════════════════════════════════════════════════
    TABLET / DESKTOP (centred layout)
    ════════════════════════════════════════════════════ */

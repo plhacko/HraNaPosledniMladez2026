@@ -13,6 +13,7 @@ const COLORS       = ['red', 'blue', 'green', 'yellow'];
 
 let activeId = null;
 const nearbyIds = new Set();
+const hiddenOnMap = new Set();
 let userPos = null;        // { lat, lng } — set whenever checkAll() succeeds
 let mapViewActive = false;
 let detailOpenedAt = 0;
@@ -205,6 +206,7 @@ function renderMapView() {
   const maxDist = Math.max(500, ...located.map(l => distM(userPos.lat, userPos.lng, l.lat, l.lng)));
 
   LOCATIONS.forEach(loc => {
+    if (hiddenOnMap.has(loc.id)) return;
     const finished   = done.includes(loc.id);
     const nearby     = nearbyIds.has(loc.id);
     const geoSkipped = skipped.includes(loc.id);
@@ -238,6 +240,24 @@ function renderMapView() {
     if (finished) marker.dataset.done = '1';
     marker.addEventListener('click', () => openDetail(loc.id));
     radar.appendChild(marker);
+  });
+}
+
+function renderMapFilter() {
+  const container = document.getElementById('map-filter');
+  container.innerHTML = '';
+  LOCATIONS.forEach(loc => {
+    const chip = document.createElement('div');
+    chip.className = `map-filter-chip bg-${colorOf(loc.id)}`;
+    if (hiddenOnMap.has(loc.id)) chip.classList.add('hidden-task');
+    chip.textContent = loc.id;
+    chip.addEventListener('click', () => {
+      if (hiddenOnMap.has(loc.id)) hiddenOnMap.delete(loc.id);
+      else hiddenOnMap.add(loc.id);
+      chip.classList.toggle('hidden-task', hiddenOnMap.has(loc.id));
+      renderMapView();
+    });
+    container.appendChild(chip);
   });
 }
 
@@ -681,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = mapViewActive ? '⊞' : '🗺';
     document.getElementById('cards-grid').classList.toggle('hidden', mapViewActive);
     document.getElementById('map-view').classList.toggle('hidden', !mapViewActive);
-    if (mapViewActive) renderMapView();
+    if (mapViewActive) { renderMapFilter(); renderMapView(); }
   });
 
   // Detail
