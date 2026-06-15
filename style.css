@@ -1055,4 +1055,5 @@ body {
   user-select: none;
   cursor: pointer;
   z-index: 2;
+  touch-action: manipulation;
 }
