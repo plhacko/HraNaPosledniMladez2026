@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const debugCorner = document.getElementById('detail-corner-br');
   debugCorner.addEventListener('click', () => {
     if (activeId === null || isDone(activeId)) return;
-    if (confirm(`Přeskočit ověření polohy pro stanoviště ${activeId}? (jen pro testování)`)) {
+    if (confirm(`⚠️ DEBUG ONLY ⚠️\nToto je pouze pro testování – nepoužívej během hry!\n\nPřeskočit ověření polohy pro stanoviště ${activeId}?`)) {
       addUnlocked(activeId);
       openDetail(activeId);
     }
