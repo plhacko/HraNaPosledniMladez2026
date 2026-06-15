@@ -220,8 +220,8 @@ nade všechny mé rozkoše!</em><br>
     lat: 50.0520775,
     lng: 14.4268969,
     type: "form",
-    basePoints: 10,
-    maxBonus: 0,
+    basePoints: 0,
+    maxBonus: 10,
     bonusDesc: null,
     task: `<p><em>PTÁČEK: No jo, to je on. Ale že já bych po něm pojmenoval důl? To je nesmysl! Ledaže by ho ode mne koupil. Ale že by mu ty básničky tak vynášely? Možné to je. Když bude mít dost peněz, klidně mu ho prodám. Piš, barde, střádej, a až budeš mít dvacet miliónů, přijde den, zúčtujem spolu.</em><br>
 — Posel světla, Jára Cimrman</p>

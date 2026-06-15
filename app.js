@@ -115,7 +115,7 @@ function show(screenId) {
 // ─── Score display ───────────────────────────────────────────────────────────
 
 function renderScore() {
-  document.getElementById('pts-display').textContent   = `${getTotalPoints() + getTotalBonus()} b.`;
+  document.getElementById('pts-display').textContent   = `${getTotalPoints()} b.`;
   document.getElementById('bonus-display').textContent = `+${getTotalBonus()} bonus`;
 }
 
