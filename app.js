@@ -149,13 +149,16 @@ function renderCards() {
     card.dataset.id = loc.id;
 
     const dist = fmtDist(loc);
+    const timechip = (!finished && loc.timeLock)
+      ? `<span class="grid-timelock">⏰ od ${loc.timeLock}</span>`
+      : '';
     card.innerHTML = `
       <span class="corner tl">${loc.id}</span>
       <div class="card-oval${locked ? ' oval-locked' : ''}">
         <div class="card-oval-inner">
           ${locked
-            ? `<span class="grid-lock">🔒</span><span class="grid-name">${loc.name}</span>`
-            : `<span class="grid-name">${loc.name}</span>${dist ? `<span class="grid-dist">${dist}</span>` : ''}`}
+            ? `<span class="grid-lock">🔒</span><span class="grid-name">${loc.name}</span>${timechip}`
+            : `<span class="grid-name">${loc.name}</span>${timechip}${dist ? `<span class="grid-dist">${dist}</span>` : ''}`}
         </div>
       </div>
       <span class="corner br">${loc.id}</span>

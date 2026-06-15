@@ -297,6 +297,17 @@ body {
   overflow: hidden;
 }
 
+.grid-timelock {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #b45309;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.12);
+  width: 70%;
+  text-align: center;
+}
+
 .grid-dist {
   font-size: 0.7rem;
   font-weight: 700;
