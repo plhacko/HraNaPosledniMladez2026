@@ -38,6 +38,13 @@ function clearUnlocked()    { localStorage.removeItem(UNLOCKED_KEY); }
 
 function getSongData()    { try { return JSON.parse(localStorage.getItem(SONG_KEY)) || {}; } catch { return {}; } }
 
+function unmarkDone(id) {
+  saveDone(getDone().filter(x => x !== id));
+  const p = getPoints();
+  delete p[id];
+  savePoints(p);
+}
+
 function markDone(id, pts) {
   const d = getDone();
   if (!d.includes(id)) { d.push(id); saveDone(d); }
@@ -361,6 +368,7 @@ function updateDoneState(loc) {
 
   const geoSkipped = getGeoSkipped().includes(loc.id);
   document.getElementById('state-done-geoskip').classList.toggle('hidden', !geoSkipped);
+  document.getElementById('btn-unreport').classList.toggle('hidden', loc.type !== 'self-report');
 }
 
 async function checkDetailPos() {
@@ -694,6 +702,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const goBack = () => { show('overview'); renderCards(); };
   document.getElementById('btn-back').addEventListener('click', goBack);
   document.getElementById('btn-back-done').addEventListener('click', goBack);
+
+  document.getElementById('btn-unreport').addEventListener('click', () => {
+    if (activeId === null) return;
+    unmarkDone(activeId);
+    const loc = LOCATIONS.find(l => l.id === activeId);
+    showTaskState(loc);
+    renderCards();
+    renderScore();
+  });
   document.getElementById('btn-retry')
     .addEventListener('click', checkDetailPos);
   document.getElementById('btn-timelock-retry').addEventListener('click', () => {
