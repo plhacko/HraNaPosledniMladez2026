@@ -10,7 +10,7 @@ const LOCATIONS = [
     basePoints: 5,
     maxBonus: 5,
     bonusDesc: "+5 pokud byl váš kámen největší",
-    task: `<p>Něco skrýváme před cizinci, něco před přáteli a něco i sami před sebou. Co předstíráte, že o sobě nevíte?</p>
+    task: `<p><em>Něco skrýváme před cizinci, něco před přáteli a něco i sami před sebou. Co předstíráte, že o sobě nevíte?</em></p>
 <p>Otázka je těžká, proto vezměte co největší kámen a vyneste ho až na vrcholek schodů, kámen pak vyfoťte a pošlete do skupiny.</p>
 <p><strong>5 bodů</strong> + 5, pokud byl váš kámen největší</p>`,
   },
