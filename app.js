@@ -149,7 +149,8 @@ function renderCards() {
     const nearby     = nearbyIds.has(loc.id);
     const geoSkipped = skipped.includes(loc.id);
     const noGeoNeeded = loc.lat === null;
-    const locked     = !finished && !nearby && !geoSkipped && !noGeoNeeded;
+    const unlocked   = nearby || getUnlocked().includes(loc.id);
+    const locked     = !finished && !unlocked && !geoSkipped && !noGeoNeeded;
     const color      = locked ? 'locked' : colorOf(loc.id);
 
     const card = document.createElement('div');
@@ -222,7 +223,8 @@ function renderMapView() {
     const nearby     = nearbyIds.has(loc.id);
     const geoSkipped = skipped.includes(loc.id);
     const noGeoNeeded = loc.lat === null;
-    const locked     = !finished && !nearby && !geoSkipped && !noGeoNeeded;
+    const unlocked   = nearby || getUnlocked().includes(loc.id);
+    const locked     = !finished && !unlocked && !geoSkipped && !noGeoNeeded;
     const color      = locked ? 'locked' : colorOf(loc.id);
 
     if (loc.lat === null) {
