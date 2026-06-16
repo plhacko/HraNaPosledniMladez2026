@@ -24,7 +24,7 @@ kde ze třiceti lodí tři se zachrání —
 <br>
 Menandros 342/41 – c. 290 BC
 
-Caesar sice jen cituje Maedera, ale **alea iacta est**, je čas překročit Rubicon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.
+Caesar sice jen cituje Menandra, ale **alea iacta est**, je čas překročit Rubicon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.
 
 10 bodů
 
@@ -39,7 +39,7 @@ Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže bý
 - amfiteátr
 
 Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.
-(Nebojte se požít telefonu coby lebky, monolog je to delší)
+(Nebojte se použít telefonu coby lebky, monolog je to delší)
 
 Být nebo nebýt – to je otázka:
 je důstojnější zapřít se a snášet
@@ -96,7 +96,7 @@ a neuzrají v čin.
 
 https://www.youtube.com/watch?v=GegCCMBsbqo
 
-Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Sver! Narnie!
+Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Sever! Narnie!
 
 
 10 bodů
@@ -242,7 +242,7 @@ nebo tě samého lstí tam vraždí — či by snad silou?‘
 nemoci velkého Dia se nijak vyhnouti nelze —
 otce však modlitbou svou hleď vzývati, Poseidona!‘
 
-Odysseus, který se se Polyfémovi představil jako Nikdo vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
+Odysseus, který se Polyfémovi představil jako Nikdo vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
 
 7 bodů
 
