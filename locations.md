@@ -114,6 +114,8 @@ Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné s
 ## Mauglí
 - nějaká jungle gym
 
+![Opičí hrazdy](Monkey-Bars-Rings-Layout.png)
+
 Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všeliké zvěři jisti Člověka, vyjma ukazuje-li svým dětem, kterak zabíjet – a pak musí loviti mimo hranice lovišť své smečky nebo svého kmene. Pravým důvodem toho jest, že zabiti člověka znamená dříve či později příchod bílých lidí na slonech, s ručnicemi a sty hnědých mužů s gongy a raketami a pochodněmi. A pak trpí v džungli kde kdo. Avšak zvěř sama mezi sebou udává za důvod tohoto zákona, že je Člověk nejslabším a nejbezbrannějším ze všech živých tvorů, a že není důstojno sportovníka dotknouti.
 <br>
 Rudyard Kipling,
