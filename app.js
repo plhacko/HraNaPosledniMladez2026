@@ -160,28 +160,23 @@ function renderCards() {
   const skipped = getGeoSkipped();
   grid.innerHTML = '';
 
-  // Render end card above all others if its timeLock has passed
+  // Render end card above all others if visible (timeLock passed or all tasks done)
   const endLoc = LOCATIONS.find(l => l.type === 'end');
-  if (endLoc) {
-    const [lH, lM] = endLoc.timeLock.split(':').map(Number);
-    const now = getNow();
-    const visible = now.getHours() > lH || (now.getHours() === lH && now.getMinutes() >= lM);
-    if (visible) {
-      const endCard = document.createElement('div');
-      endCard.className = `uno-card grid-card grid-card-full color-wild`;
-      endCard.dataset.id = endLoc.id;
-      endCard.innerHTML = `
-        <span class="corner tl">${endLoc.id}</span>
-        <div class="card-oval">
-          <div class="card-oval-inner">
-            <span class="grid-name">${endLoc.name}</span>
-          </div>
+  if (endLoc && isEndCardVisible()) {
+    const endCard = document.createElement('div');
+    endCard.className = `uno-card grid-card grid-card-full color-wild`;
+    endCard.dataset.id = endLoc.id;
+    endCard.innerHTML = `
+      <span class="corner tl">${endLoc.id}</span>
+      <div class="card-oval">
+        <div class="card-oval-inner">
+          <span class="grid-name">${endLoc.name}</span>
         </div>
-        <span class="corner br">${endLoc.id}</span>
-      `;
-      endCard.addEventListener('click', () => openDetail(endLoc.id));
-      grid.appendChild(endCard);
-    }
+      </div>
+      <span class="corner br">${endLoc.id}</span>
+    `;
+    endCard.addEventListener('click', () => openDetail(endLoc.id));
+    grid.appendChild(endCard);
   }
 
   LOCATIONS.forEach(loc => {
