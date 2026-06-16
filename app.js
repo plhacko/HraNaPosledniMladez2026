@@ -301,6 +301,12 @@ function openDetail(id) {
     return;
   }
 
+  // Previously unlocked on-site — show task immediately (also bypasses time-lock)
+  if (getUnlocked().includes(id)) {
+    showTaskState(loc);
+    return;
+  }
+
   // Time-lock check
   if (loc.timeLock) {
     const [lockH, lockM] = loc.timeLock.split(':').map(Number);
@@ -321,12 +327,6 @@ function openDetail(id) {
 
   // Geo-skipped — show task immediately
   if (getGeoSkipped().includes(id)) {
-    showTaskState(loc);
-    return;
-  }
-
-  // Previously unlocked on-site — show task immediately
-  if (getUnlocked().includes(id)) {
     showTaskState(loc);
     return;
   }
