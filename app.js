@@ -894,6 +894,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // End-game card buttons
+  document.getElementById('btn-end-early').addEventListener('click', () => {
+    if (!confirm('Upozornění: Předčasným ukončením Neplecha přijdete o možnost splnit zbývající úkoly a získat více bodů.\n\nOpravdu chcete Neplechu ukončit?')) return;
+    document.getElementById('end-before').classList.add('hidden');
+    document.getElementById('end-after').classList.remove('hidden');
+  });
+
   document.getElementById('btn-end-compass').addEventListener('click', () => {
     hiddenOnMap.clear();
     LOCATIONS.forEach(l => { if (l.type !== 'end') hiddenOnMap.add(l.id); });
