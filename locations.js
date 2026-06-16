@@ -237,15 +237,7 @@ nade všechny mé rozkoše!</em><br>
     basePoints: 7,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p><em>Druzi ten z olivy kyj pak chopili, na konci ostrý,<br>
-jemu jej do oka vbodli, já točil jím, svrchu oň opřen.<br>
-Jako když lodní trám kdos vrtá, nebozez vezma,<br>
-při čemž druhové jeho jím vespod za řemen točí,<br>
-s obou jej chopíce stran — ten točí se stále a stále,<br>
-tak tím řeřavým kyjem jsme točili v obrově oku,<br>
-okolo něho pak krev, jak točil se, kroužila horká.<br>
-(…)<br>
-Zařval bolestí strašně, až kolem ječela skála.</em></p>
+    task: `<p><em>Druzi ten z olivy kyj pak chopili, na konci ostrý, jemu jej do oka vbodli, já točil jím, svrchu oň opřen. Jako když lodní trám kdos vrtá, nebozez vezma, při čemž druhové jeho jím vespod za řemen točí, s obou jej chopíce stran — ten točí se stále a stále, tak tím řeřavým kyjem jsme točili v obrově oku, okolo něho pak krev, jak točil se, kroužila horká. (…) Zařval bolestí strašně, až kolem ječela skála.</em></p>
 <p>Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena týmu a ostatním zavažte oči (nebo je jiným způsobem na krátko oslepte). Vidět pak můžete až když dojdete na další stanoviště.</p>
 <p><strong>7 bodů</strong></p>`,
   },
