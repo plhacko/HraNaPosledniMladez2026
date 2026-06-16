@@ -80,7 +80,7 @@ a neuzrají v čin.</em></p>
     basePoints: 10,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Narnie!</p>`,
+    task: `<p>Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Sever! Narnie!</p>`,
   },
 
   {
