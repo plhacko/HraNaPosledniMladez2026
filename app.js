@@ -126,12 +126,14 @@ function colorOf(id) {
   if (loc?.type === 'end') return 'wild';
   return COLORS[(id - 1) % COLORS.length];
 }
-function isGameOver() { const n = new Date(); return n.getHours() >= 21; }
+let debugNow = null;
+function getNow() { return debugNow ? new Date(debugNow) : new Date(); }
+function isGameOver() { const n = getNow(); return n.getHours() >= 21; }
 function isEndCardVisible() {
   const loc = LOCATIONS.find(l => l.type === 'end');
   if (!loc) return false;
   const [lH, lM] = loc.timeLock.split(':').map(Number);
-  const now = new Date();
+  const now = getNow();
   return now.getHours() > lH || (now.getHours() === lH && now.getMinutes() >= lM);
 }
 
@@ -160,7 +162,7 @@ function renderCards() {
   const endLoc = LOCATIONS.find(l => l.type === 'end');
   if (endLoc) {
     const [lH, lM] = endLoc.timeLock.split(':').map(Number);
-    const now = new Date();
+    const now = getNow();
     const visible = now.getHours() > lH || (now.getHours() === lH && now.getMinutes() >= lM);
     if (visible) {
       const endCard = document.createElement('div');
@@ -352,7 +354,7 @@ function openDetail(id) {
   // Time-lock check
   if (loc.timeLock) {
     const [lockH, lockM] = loc.timeLock.split(':').map(Number);
-    const now = new Date();
+    const now = getNow();
     if (now.getHours() < lockH || (now.getHours() === lockH && now.getMinutes() < lockM)) {
       document.getElementById('timelocked-text').textContent =
         `Karta bude dostupná ve ${loc.timeLock}`;
@@ -883,6 +885,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-reset').addEventListener('click', () => {
     resetGame();
     show('splash');
+  });
+
+  // Debug time override
+  document.getElementById('btn-debug-time').addEventListener('click', () => {
+    const t = prompt('Debug time (HH:MM) or blank to reset:');
+    if (t && /^\d{1,2}:\d{2}$/.test(t)) {
+      const [h, m] = t.split(':').map(Number);
+      debugNow = new Date(); debugNow.setHours(h, m, 0, 0);
+      document.getElementById('debug-time-label').textContent = t;
+    } else {
+      debugNow = null;
+      document.getElementById('debug-time-label').textContent = 'real';
+    }
+    renderCards();
   });
 
   // End-game card buttons
