@@ -24,7 +24,7 @@ const LOCATIONS = [
     basePoints: 10,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.<br>(Nebojte se použít telefonu co by lebky, monolog je to delší)</p>
+    task: `<p>Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.<br>(Nebojte se použít telefonu coby lebky, monolog je to delší)</p>
 <p><em>Být nebo nebýt – to je otázka:<br>
 je důstojnější zapřít se a snášet<br>
 surovost osudu a jeho rány,<br>
@@ -115,7 +115,7 @@ kde ze třiceti lodí tři se zachrání —<br>
     maxBonus: 0,
     bonusDesc: null,
     pointOptions: [5, 7, 10],
-    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 10.</p>`,
+    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být na škodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy, které vyhrají, získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak 10 bodů.</p>`,
   },
 
   {
@@ -129,7 +129,7 @@ kde ze třiceti lodí tři se zachrání —<br>
     bonusDesc: null,
     task: `<p><em>Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všeliké zvěři jisti Člověka, vyjma ukazuje-li svým dětem, kterak zabíjet – a pak musí loviti mimo hranice lovišť své smečky nebo svého kmene. Pravým důvodem toho jest, že zabiti člověka znamená dříve či později příchod bílých lidí na slonech, s ručnicemi a sty hnědých mužů s gongy a raketami a pochodněmi. A pak trpí v džungli kde kdo. Avšak zvěř sama mezi sebou udává za důvod tohoto zákona, že je Člověk nejslabším a nejbezbrannějším ze všech živých tvorů, a že není důstojno sportovníka dotknouti.</em><br>
 — Rudyard Kipling, Kniha džunglí</p>
-<p>Připravte se do džungle. Přeručkujte 20× opičí hrazdy tohohle hřiště (není potřeba aby všichni přeručkovali stejně často).</p>
+<p>Připravte se do džungle. Přeručkujte 20× opičí hrazdy tohohle hřiště (není potřeba, aby všichni přeručkovali stejně často).</p>
 <p><strong>5 bodů</strong></p>`,
   },
 
@@ -210,7 +210,7 @@ nade všechny mé rozkoše!</em><br>
     basePoints: 5,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma) vyhráváte, jinak pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.</p>
+    task: `<p>Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.</p>
 <p><strong>5 bodů</strong></p>`,
   },
 
@@ -238,7 +238,7 @@ nade všechny mé rozkoše!</em><br>
     maxBonus: 0,
     bonusDesc: null,
     task: `<p><em>Druzi ten z olivy kyj pak chopili, na konci ostrý, jemu jej do oka vbodli, já točil jím, svrchu oň opřen. Jako když lodní trám kdos vrtá, nebozez vezma, při čemž druhové jeho jím vespod za řemen točí, s obou jej chopíce stran — ten točí se stále a stále, tak tím řeřavým kyjem jsme točili v obrově oku, okolo něho pak krev, jak točil se, kroužila horká. (…) Zařval bolestí strašně, až kolem ječela skála.</em></p>
-<p>Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena týmu a ostatním zavažte oči (nebo je jiným způsobem na krátko oslepte). Vidět pak můžete až když dojdete na další stanoviště.</p>
+<p>Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena týmu a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.</p>
 <p><strong>7 bodů</strong></p>`,
   },
 ];

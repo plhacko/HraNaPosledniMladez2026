@@ -32,14 +32,14 @@ Caesar sice jen cituje Maedera, ale **alea iacta est**, je čas překročit Rubi
 - frisbee loučka
 - poznámka: tato karta je časově zamčena je možné ji splnit jen v určitý moment, pokud klikne na tuto kartu uživatel dříve, tak ho jen upozorní, že kartu lze plnit až ve 20:00
 
-Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být naškodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy které vyhrají získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak bodů 10.
+Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být na škodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy, které vyhrají, získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak 10 bodů.
 
 
 ## Být či nebýt
 - amfiteátr
 
-Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.
-(Nebojte se požít telefonu co by lebky, monolog je to delší)
+Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.
+(Nebojte se požít telefonu coby lebky, monolog je to delší)
 
 Být nebo nebýt – to je otázka:
 je důstojnější zapřít se a snášet
@@ -96,7 +96,7 @@ a neuzrají v čin.
 
 https://www.youtube.com/watch?v=GegCCMBsbqo
 
-Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Narnie!
+Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Sver! Narnie!
 
 
 10 bodů
@@ -107,7 +107,7 @@ Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáv�
 https://www.youtube.com/watch?v=es7Br9kJBbo
 Apollo-Soyuz Docking: July 17, 1975
 
-Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma) vyhráváte, jinak pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat co bude vaše další slovo.
+Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.
 
 5 bodů
 
@@ -119,7 +119,7 @@ Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všel
 Rudyard Kipling,
 Kniha džunglí
 
-Připravte se do džungle. Přeručkujte 20 krát opičí hrazdy tohohle hřiště (není potřeba aby všichni přeručkovali stejně často).
+Připravte se do džungle. Přeručkujte 20 krát opičí hrazdy tohohle hřiště (není potřeba, aby všichni přeručkovali stejně často).
 
 5 bodů
 
@@ -242,7 +242,7 @@ nebo tě samého lstí tam vraždí — či by snad silou?‘
 nemoci velkého Dia se nijak vyhnouti nelze —
 otce však modlitbou svou hleď vzývati, Poseidona!‘
 
-Odysseus, který se se Polyfémovi představil jako Nikdo vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem na krátko oslepte). Vidět pak můžete až když dojdete na další stanoviště.
+Odysseus, který se se Polyfémovi představil jako Nikdo vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
 
 7 bodů
 
