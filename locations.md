@@ -38,7 +38,7 @@ Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže bý
 ## Být či nebýt
 - amfiteátr
 
-Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.
+Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteátru. Na konci pak otočte kameru na jásavé publikum.
 (Nebojte se použít telefonu coby lebky, monolog je to delší)
 
 Být nebo nebýt – to je otázka:
@@ -91,7 +91,7 @@ a neuzrají v čin.
 10 bodů
 
 ## Císařský ostrov
-- je potřeba mít zde další tlačítko, které pokud zmáčnou, zjistí se jejich poloha a pokud jsou dostatečně blízko, tak získají 10 bodů. Pokud ne, napiš jim hlášku "Víc na sever/východ/západ/jih!". Po úspěchu pak získají 10 bodů.
+- je potřeba mít zde další tlačítko, které pokud zmáčknou, zjistí se jejich poloha a pokud jsou dostatečně blízko, tak získají 10 bodů. Pokud ne, napiš jim hlášku "Víc na sever/východ/západ/jih!". Po úspěchu pak získají 10 bodů.
 - v legendě je yt video, způsob, aby tam byl yt přehrávač a mohli si ho přehrát  
 
 https://www.youtube.com/watch?v=GegCCMBsbqo

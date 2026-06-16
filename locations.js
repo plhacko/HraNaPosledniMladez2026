@@ -24,7 +24,7 @@ const LOCATIONS = [
     basePoints: 10,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteatru. Na konci pak otočte kameru na jásavé publikum.<br>(Nebojte se použít telefonu coby lebky, monolog je to delší)</p>
+    task: `<p>Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteátru. Na konci pak otočte kameru na jásavé publikum.<br>(Nebojte se použít telefonu coby lebky, monolog je to delší)</p>
 <p><em>Být nebo nebýt – to je otázka:<br>
 je důstojnější zapřít se a snášet<br>
 surovost osudu a jeho rány,<br>
@@ -114,8 +114,8 @@ kde ze třiceti lodí tři se zachrání —<br>
     basePoints: 0,
     maxBonus: 0,
     bonusDesc: null,
-    pointOptions: [5, 7, 10],
-    task: `<p>Ve zdravém těle zdravý duch, ale rozumné sportování také nemůže být na škodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy, které vyhrají, získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak 10 bodů.</p>`,
+    pointOptions: [7, 10, 15],
+    task: `<p>Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být na škodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy, které vyhrají, získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak 10 bodů.</p>`,
   },
 
   {
