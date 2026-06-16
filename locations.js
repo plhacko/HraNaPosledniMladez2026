@@ -100,7 +100,7 @@ ne libyjské, ne egejské, ni sicilské,<br>
 kde ze třiceti lodí tři se zachrání —<br>
 žádný ženatý muž nebyl nikdy zachráněn!<br>
 <em>— Menandros 342/41 – c. 290 BC</em></p>
-<p>Caesar sice jen cituje Menandra, ale <strong>alea iacta est</strong>, je čas překročit Rubikon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.</p>
+<p>Caesar sice jen cituje Menandra, ale <strong style="color:orange">alea iacta est</strong>, je čas překročit Rubikon, nebo spíše Botičský potok. Vyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě. Fotky jsou vítány.</p>
 <p><strong>10 bodů</strong></p>`,
   },
 
