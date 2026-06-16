@@ -189,7 +189,7 @@ nade všechny mé rozkoše!</em><br>
         reason: "1. list Tesalonickým – Pavel ho napsal kolem roku 50–51 n. l., zatímco evangelia a Skutky vznikly až v 60.–90. letech.",
       },
       {
-        q: "Co je podle žalmu 137 lepší než zapomenout na Jeruzalém?",
+        q: "Co je podle žalmu 137 lepší než zapomenout na Jeruzalém? (viz verš výše)",
         options: [
           "Aby mu bylo vyloupnuto oko a uťata pravice",
           "Zemřít v babylonském zajetí",
@@ -211,7 +211,7 @@ nade všechny mé rozkoše!</em><br>
     basePoints: 5,
     maxBonus: 0,
     bonusDesc: null,
-    task: `<p>Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.</p>
+    task: `<p>Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte najednou bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.</p>
 <p><strong>5 bodů</strong></p>`,
   },
 
