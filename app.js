@@ -107,7 +107,7 @@ function getPos() {
 // ─── Screens ─────────────────────────────────────────────────────────────────
 
 function show(screenId) {
-  ['splash', 'overview', 'detail', 'done'].forEach(id => {
+  ['splash', 'overview', 'detail'].forEach(id => {
     document.getElementById(`screen-${id}`).classList.toggle('hidden', id !== screenId);
   });
 }
@@ -130,6 +130,8 @@ let debugNow = null;
 function getNow() { return debugNow ? new Date(debugNow) : new Date(); }
 function isGameOver() { const n = getNow(); return n.getHours() >= 21; }
 function isEndCardVisible() {
+  const countable = LOCATIONS.filter(l => l.type !== 'end');
+  if (countable.every(l => getDone().includes(l.id))) return true;
   const loc = LOCATIONS.find(l => l.type === 'end');
   if (!loc) return false;
   const [lH, lM] = loc.timeLock.split(':').map(Number);
@@ -685,7 +687,7 @@ function checkAllDone() {
   const countable = LOCATIONS.filter(l => l.type !== 'end');
   if (countable.every(l => getDone().includes(l.id))) {
     launchConfetti();
-    show('done');
+    renderCards();
   }
 }
 
@@ -881,11 +883,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // All-done screen
-  document.getElementById('btn-reset').addEventListener('click', () => {
-    resetGame();
-    show('splash');
-  });
 
   // Debug time override
   document.getElementById('btn-debug-time').addEventListener('click', () => {
