@@ -112,7 +112,7 @@ Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné s
 5 bodů
 
 ## Mauglí
-- nějká jungle gym
+- nějaká jungle gym
 
 Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všeliké zvěři jisti Člověka, vyjma ukazuje-li svým dětem, kterak zabíjet – a pak musí loviti mimo hranice lovišť své smečky nebo svého kmene. Pravým důvodem toho jest, že zabiti člověka znamená dříve či později příchod bílých lidí na slonech, s ručnicemi a sty hnědých mužů s gongy a raketami a pochodněmi. A pak trpí v džungli kde kdo. Avšak zvěř sama mezi sebou udává za důvod tohoto zákona, že je Člověk nejslabším a nejbezbrannějším ze všech živých tvorů, a že není důstojno sportovníka dotknouti.
 <br>
@@ -134,7 +134,7 @@ Vyberte si písničku, která má alespoň tři sloky a přepište ji do textbox
 
 10 bodů
 
-poznámka: add three textboxes to this task so they can write the song in ait and another one where they should input their team names in and anothe one for the name of the song and a button that will send the text to the email plhacko@gmail.com and a subjet 
+poznámka: add three textboxes to this task so they can write the song in it and another one where they should input their team names in and another one for the name of the song and a button that will send the text to the email plhacko@gmail.com and a subject
 
 ## U řek babylonských jsme sedávali
 - někde u řeky
