@@ -348,6 +348,12 @@ function openDetail(id) {
     return;
   }
 
+  // End-game card — always show task content directly, no GPS unlock needed
+  if (loc.type === 'end') {
+    showTaskState(loc);
+    return;
+  }
+
   // Time-lock check
   if (loc.timeLock) {
     const [lockH, lockM] = loc.timeLock.split(':').map(Number);
@@ -358,12 +364,6 @@ function openDetail(id) {
       setState('timelocked');
       return;
     }
-  }
-
-  // End-game card — always show task content directly, no GPS unlock needed
-  if (loc.type === 'end') {
-    showTaskState(loc);
-    return;
   }
 
   // No coords yet — show task immediately
