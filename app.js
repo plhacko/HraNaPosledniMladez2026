@@ -8,7 +8,8 @@ const POINTS_KEY   = 'mladez2026_points';
 const BONUS_KEY    = 'mladez2026_bonus';
 const GEO_SKIP_KEY    = 'mladez2026_geo_skipped';
 const UNLOCKED_KEY    = 'mladez2026_unlocked';
-const SONG_KEY     = 'mladez2026_song';
+const SONG_KEY            = 'mladez2026_song';
+const FORCE_GAME_OVER_KEY = 'mladez2026_force_game_over';
 const COLORS       = ['red', 'blue', 'green', 'yellow'];
 
 let activeId = null;
@@ -128,7 +129,11 @@ function colorOf(id) {
 }
 let debugNow = null;
 function getNow() { return debugNow ? new Date(debugNow) : new Date(); }
-function isGameOver() { const n = getNow(); return n.getHours() >= 21; }
+function isGameOver() {
+  if (localStorage.getItem(FORCE_GAME_OVER_KEY) === 'true') return true;
+  const n = getNow();
+  return n.getHours() >= 21;
+}
 function isEndCardVisible() {
   const countable = LOCATIONS.filter(l => l.type !== 'end');
   if (countable.every(l => getDone().includes(l.id))) return true;
@@ -896,8 +901,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // End-game card buttons
   document.getElementById('btn-end-early').addEventListener('click', () => {
     if (!confirm('Upozornění: Předčasným ukončením Neplecha přijdete o možnost splnit zbývající úkoly a získat více bodů.\n\nOpravdu chcete Neplechu ukončit?')) return;
+    localStorage.setItem(FORCE_GAME_OVER_KEY, 'true');
     document.getElementById('end-before').classList.add('hidden');
     document.getElementById('end-after').classList.remove('hidden');
+    renderCards();
   });
 
   document.getElementById('btn-end-compass').addEventListener('click', () => {
