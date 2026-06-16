@@ -120,6 +120,8 @@ body {
 .uno-card.color-green  { background: var(--green); }
 .uno-card.color-yellow { background: var(--yellow); }
 .uno-card.color-locked { background: var(--slate); opacity: 0.85; }
+.uno-card.color-wild   { background: conic-gradient(var(--red) 0deg 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg); }
+.grid-card-full        { grid-column: 1 / -1; justify-self: center; }
 
 /* Corner numbers */
 .uno-card .corner {
@@ -1000,6 +1002,7 @@ body {
 .bg-blue   { background: var(--blue);   color: #fff; }
 .bg-green  { background: var(--green);  color: #fff; }
 .bg-yellow { background: var(--yellow); color: var(--black); }
+.bg-wild   { background: conic-gradient(var(--red) 0deg 90deg, var(--blue) 90deg 180deg, var(--green) 180deg 270deg, var(--yellow) 270deg 360deg); color: #fff; }
 .bg-locked { background: var(--slate);  color: rgba(255,255,255,0.7); }
 
 .map-hint {

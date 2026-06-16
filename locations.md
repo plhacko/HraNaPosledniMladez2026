@@ -248,6 +248,20 @@ Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte je
 
 7 bodů
 
-## Nápady:
+## Neplecha ukončena
+- fara 
+- tento úkol je úkol, který ukončí herní dobu - objeví se ve 20:45
+- bude to speciální karta, která bude na sobě mít napsané Neplecha bude ukončena v 21:00
+- po 21:00
+    - změní se text úkolu na "Neplecha ukončena, zbývá už jen jeden poslední úkol a pak už jen vavříny pro vítěze." a bude tam tlačítko, které přepne mapu na kompas, kde bude přidána lokace tohoto stanoviště (a ostatní stanoviště budou hidden (stejně jako by uživatel zmáčknul nějakou z bublin pod kompasem))
+    - úkoly na kartách už nebude možné splnit and zrušit jejich splnění (jinak funkcionalita zůstává stejná)
+- místem bude umístěna uprostřed nad ostatními kartami
+- tato karta by měla být barevně jako uno karta pro změnu barvy
+
+Děkujeme za hraní!
+Získali jste XX bodů a k tomu potenciálně až XX bonusových bodů
+tohle je konec hry na vyhodnocení počkejtena zahradě fary, až se vrátí všechny týmy.
+0 bodů
+
 
 10

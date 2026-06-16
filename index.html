@@ -135,6 +135,25 @@
               <button id="btn-back-done" class="btn btn-dark">← Zpět</button>
             </div>
 
+            <div id="state-end" class="detail-state hidden">
+              <div id="end-before">
+                <span class="state-icon">⏳</span>
+                <p class="state-text">Neplecha bude ukončena v 21:00</p>
+              </div>
+              <div id="end-after" class="hidden">
+                <div id="end-task-text"></div>
+                <button id="btn-end-compass" class="btn btn-blue" style="margin-top:12px">🧭 Ukázat na mapě</button>
+                <button id="btn-end-gps-check" class="btn btn-red" style="margin-top:8px">📍 Zkontrolovat polohu</button>
+              </div>
+            </div>
+
+            <div id="state-end-arrived" class="detail-state hidden">
+              <span class="state-icon">🎉</span>
+              <p class="state-text">Děkujeme za hraní!</p>
+              <p id="end-pts-summary" class="state-subtext"></p>
+              <p class="state-subtext">Tohle je konec hry. Na vyhodnocení počkejte na zahradě fary, až se vrátí všechny týmy.</p>
+            </div>
+
           </div>
         </div>
         <span id="detail-corner-br" class="corner br">1</span>

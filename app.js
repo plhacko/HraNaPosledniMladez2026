@@ -121,7 +121,19 @@ function renderScore() {
 
 // ─── Overview cards ──────────────────────────────────────────────────────────
 
-function colorOf(id) { return COLORS[(id - 1) % COLORS.length]; }
+function colorOf(id) {
+  const loc = LOCATIONS.find(l => l.id === id);
+  if (loc?.type === 'end') return 'wild';
+  return COLORS[(id - 1) % COLORS.length];
+}
+function isGameOver() { const n = new Date(); return n.getHours() >= 21; }
+function isEndCardVisible() {
+  const loc = LOCATIONS.find(l => l.type === 'end');
+  if (!loc) return false;
+  const [lH, lM] = loc.timeLock.split(':').map(Number);
+  const now = new Date();
+  return now.getHours() > lH || (now.getHours() === lH && now.getMinutes() >= lM);
+}
 
 function fmtDist(loc) {
   if (!userPos || loc.lat === null) return '';
@@ -144,7 +156,33 @@ function renderCards() {
   const skipped = getGeoSkipped();
   grid.innerHTML = '';
 
+  // Render end card above all others if its timeLock has passed
+  const endLoc = LOCATIONS.find(l => l.type === 'end');
+  if (endLoc) {
+    const [lH, lM] = endLoc.timeLock.split(':').map(Number);
+    const now = new Date();
+    const visible = now.getHours() > lH || (now.getHours() === lH && now.getMinutes() >= lM);
+    if (visible) {
+      const endCard = document.createElement('div');
+      endCard.className = `uno-card grid-card grid-card-full color-wild`;
+      endCard.dataset.id = endLoc.id;
+      endCard.innerHTML = `
+        <span class="corner tl">${endLoc.id}</span>
+        <div class="card-oval">
+          <div class="card-oval-inner">
+            <span class="grid-name">${endLoc.name}</span>
+          </div>
+        </div>
+        <span class="corner br">${endLoc.id}</span>
+      `;
+      endCard.addEventListener('click', () => openDetail(endLoc.id));
+      grid.appendChild(endCard);
+    }
+  }
+
   LOCATIONS.forEach(loc => {
+    if (loc.type === 'end') return;
+
     const finished   = done.includes(loc.id);
     const nearby     = nearbyIds.has(loc.id);
     const geoSkipped = skipped.includes(loc.id);
@@ -186,8 +224,10 @@ function renderCards() {
     grid.appendChild(card);
   });
 
+  const regularCount = LOCATIONS.filter(l => l.type !== 'end').length;
+  const doneRegular  = done.filter(id => LOCATIONS.find(l => l.id === id && l.type !== 'end')).length;
   document.getElementById('progress-chip').textContent =
-    `${done.length} / ${LOCATIONS.length}`;
+    `${doneRegular} / ${regularCount}`;
 
   renderScore();
   if (mapViewActive) renderMapView();
@@ -219,10 +259,11 @@ function renderMapView() {
 
   LOCATIONS.forEach(loc => {
     if (hiddenOnMap.has(loc.id)) return;
+    if (loc.type === 'end' && !isEndCardVisible()) return;
     const finished   = done.includes(loc.id);
     const nearby     = nearbyIds.has(loc.id);
     const geoSkipped = skipped.includes(loc.id);
-    const noGeoNeeded = loc.lat === null;
+    const noGeoNeeded = loc.lat === null || loc.type === 'end';
     const unlocked   = nearby || getUnlocked().includes(loc.id);
     const locked     = !finished && !unlocked && !geoSkipped && !noGeoNeeded;
     const color      = locked ? 'locked' : colorOf(loc.id);
@@ -260,6 +301,7 @@ function renderMapFilter() {
   const container = document.getElementById('map-filter');
   container.innerHTML = '';
   LOCATIONS.forEach(loc => {
+    if (loc.type === 'end' && !isEndCardVisible()) return;
     const chip = document.createElement('div');
     chip.className = `map-filter-chip bg-${colorOf(loc.id)}`;
     if (hiddenOnMap.has(loc.id)) chip.classList.add('hidden-task');
@@ -277,7 +319,7 @@ function renderMapFilter() {
 // ─── Detail view ─────────────────────────────────────────────────────────────
 
 function setState(s) {
-  ['checking', 'timelocked', 'far', 'near', 'quiz', 'form', 'geo-hunt', 'done'].forEach(name => {
+  ['checking', 'timelocked', 'far', 'near', 'quiz', 'form', 'geo-hunt', 'done', 'end', 'end-arrived'].forEach(name => {
     document.getElementById(`state-${name}`).classList.toggle('hidden', name !== s);
   });
 }
@@ -319,6 +361,12 @@ function openDetail(id) {
     }
   }
 
+  // End-game card — always show task content directly, no GPS unlock needed
+  if (loc.type === 'end') {
+    showTaskState(loc);
+    return;
+  }
+
   // No coords yet — show task immediately
   if (loc.lat === null) {
     showTaskState(loc);
@@ -353,7 +401,12 @@ function renderGeoHunt(loc) {
 }
 
 function showTaskState(loc) {
-  if (loc.type === 'quiz') {
+  if (loc.type === 'end') {
+    document.getElementById('end-task-text').innerHTML = loc.task;
+    document.getElementById('end-before').classList.toggle('hidden', isGameOver());
+    document.getElementById('end-after').classList.toggle('hidden', !isGameOver());
+    setState('end');
+  } else if (loc.type === 'quiz') {
     renderQuiz(loc);
     setState('quiz');
   } else if (loc.type === 'form') {
@@ -551,6 +604,7 @@ function submitQuiz() {
   doneBtn.style.marginTop = '6px';
   doneBtn.textContent = 'Označit jako splněné ✓';
   doneBtn.addEventListener('click', () => {
+    if (isGameOver()) return;
     markDone(activeId, pts);
     nearbyIds.delete(activeId);
     updateDoneState(loc);
@@ -600,6 +654,7 @@ function renderSongForm(loc) {
   });
 
   document.getElementById('btn-mark-sent').addEventListener('click', () => {
+    if (isGameOver()) return;
     markDone(activeId, loc.basePoints);
     nearbyIds.delete(activeId);
     updateDoneState(loc);
@@ -625,7 +680,8 @@ function escHtml(str) {
 // ─── All done ────────────────────────────────────────────────────────────────
 
 function checkAllDone() {
-  if (getDone().length >= LOCATIONS.length) {
+  const countable = LOCATIONS.filter(l => l.type !== 'end');
+  if (countable.every(l => getDone().includes(l.id))) {
     launchConfetti();
     show('done');
   }
@@ -755,6 +811,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('btn-unreport').addEventListener('click', () => {
     if (activeId === null) return;
+    if (isGameOver()) return;
     unmarkDone(activeId);
     const loc = LOCATIONS.find(l => l.id === activeId);
     showTaskState(loc);
@@ -769,6 +826,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.getElementById('btn-complete').addEventListener('click', () => {
     if (activeId === null) return;
+    if (isGameOver()) return;
     const loc = LOCATIONS.find(l => l.id === activeId);
     let pts = loc.basePoints;
     if (loc.pointOptions) {
@@ -788,6 +846,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-geo-hunt-check').addEventListener('click', async () => {
     const loc = LOCATIONS.find(l => l.id === activeId);
     if (!loc) return;
+    if (isGameOver()) return;
     const btn = document.getElementById('btn-geo-hunt-check');
     const hint = document.getElementById('geo-hunt-hint');
     btn.disabled = true;
@@ -824,6 +883,41 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-reset').addEventListener('click', () => {
     resetGame();
     show('splash');
+  });
+
+  // End-game card buttons
+  document.getElementById('btn-end-compass').addEventListener('click', () => {
+    hiddenOnMap.clear();
+    LOCATIONS.forEach(l => { if (l.type !== 'end') hiddenOnMap.add(l.id); });
+    goBack();
+    mapViewActive = true;
+    document.getElementById('btn-view-toggle').textContent = '⊞';
+    document.getElementById('cards-grid').classList.add('hidden');
+    document.getElementById('map-view').classList.remove('hidden');
+    renderMapFilter();
+    renderMapView();
+  });
+
+  document.getElementById('btn-end-gps-check').addEventListener('click', async () => {
+    const loc = LOCATIONS.find(l => l.type === 'end');
+    const btn = document.getElementById('btn-end-gps-check');
+    btn.disabled = true;
+    btn.textContent = '⏳ Zjišťuji…';
+    try {
+      const pos = await getPos();
+      const d = distM(pos.coords.latitude, pos.coords.longitude, loc.lat, loc.lng);
+      if (d <= PROXIMITY_M) {
+        document.getElementById('end-pts-summary').innerHTML =
+          `Získali jste <strong>${getTotalPoints()} bodů</strong> a k tomu potenciálně až <strong>${getTotalBonus()} bonusových bodů</strong>.`;
+        setState('end-arrived');
+      } else {
+        btn.disabled = false;
+        btn.textContent = `📍 Zkontrolovat polohu (${Math.round(d)} m)`;
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = '📍 Zkontrolovat polohu';
+    }
   });
 
   // Debug unlock: single tap on bottom-right corner + confirm dialog

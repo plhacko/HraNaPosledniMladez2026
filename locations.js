@@ -242,4 +242,18 @@ nade všechny mé rozkoše!</em><br>
 <p>Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena týmu a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.</p>
 <p><strong>7 bodů</strong></p>`,
   },
+
+  {
+    id: 11,
+    name: "Neplecha ukončena",
+    lat: 50.0236217,
+    lng: 14.4114150,
+    type: "end",
+    timeLock: "20:45",
+    endTime: "21:00",
+    basePoints: 0,
+    maxBonus: 0,
+    bonusDesc: null,
+    task: `<p>Neplecha ukončena, zbývá už jen jeden poslední úkol a pak už jen vavříny pro vítěze.</p>`,
+  },
 ];
