@@ -244,7 +244,7 @@ nebo tě samého lstí tam vraždí — či by snad silou?‘
 nemoci velkého Dia se nijak vyhnouti nelze —
 otce však modlitbou svou hleď vzývati, Poseidona!‘
 
-Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
+Odysseus, který se Polyfémovi představil jako Nikdo, jednoho z vás oslepil. Vyberte jednoho člena a zavažte mu oči (nebo jej jiným způsobem nakrátko oslepte). Vidět pak může, až když dojdete na další stanoviště.
 
 7 bodů
 
@@ -264,4 +264,48 @@ tohle je konec hry na vyhodnocení počkejtena zahradě fary, až se vrátí vš
 0 bodů
 
 
-10
+# 10 otázek na závěr
+- tohle je kvíz, který potom bude vyhodnocen zcela ručně a není součástí aplikace a zaměřuje se na doprovodný text ke každé z karet výše
+
+
+Rubicon
+- Do čeho se pouští osoba, která v dramatu od Menandrose říká kostky jsou vrženy? 
+- odpověď: manželství
+- 2 body
+
+Ve zdravém těle zdravý duch
+- vymanujte 3 způsoby hodu frisbeem.
+- Backhand, Forehand/Flick, Hammer, Scoober, Blade, Thumber, Roller, Air bounce, Push pass, Overhand wrist flip
+
+Být či nebýt
+- Jakým tématem se zaobírá Hamlet ve svém monologu? 
+- sebevražda / Stoická rezignace vs. aktivní jednání 
+
+Císařský ostrov
+- Zazpívejte část Rakousko-Uherské hymny hymny, co v klipu zpíval Burns
+- Mou zemí jen ty jsi, Rakousko s Uhrami, Císař je pán.
+
+Mind meld
+- v jakém roce se uskutečnila mise Apollo-Sojuz
+- odpověď: 1975
+
+Mauglí
+- V úryvku z Knihy džunglí je člověk popsán dvěma nej vlastnostmi, jmenujte alespoň jedno. 
+- odpověď: nejslabší, nejbezbrannější
+
+Piš barde střádej
+- Za kolik peněz je ochotný Ptáček z Cimrmanovy hry prodat bardovi důl?
+- odpověď: 20 miliónů 
+
+U řek babylonských jsme sedávali
+- žalm 136 zmiňuje, že sedávali u řek Babylonských, o jaké řeky se jedná?
+- Eufrat a Tigris
+
+Polyfémos
+- Jakým jménem se Odysseus se představí kyklopovi Polyfémovi
+- odpověď: Nikdo
+
+Chvilka filosofie
+- Přišli jste na něco, co předstíráte, že nevíte o sobě?
+- 1 bod pokud alespoň jeden 2 pokud víc
+- bonus otázka
