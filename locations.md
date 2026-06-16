@@ -107,7 +107,7 @@ Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáv�
 https://www.youtube.com/watch?v=es7Br9kJBbo
 Apollo-Soyuz Docking: July 17, 1975
 
-Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.
+Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo.
 
 5 bodů
 
@@ -119,7 +119,7 @@ Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všel
 Rudyard Kipling,
 Kniha džunglí
 
-Připravte se do džungle. Přeručkujte 20 krát opičí hrazdy tohohle hřiště (není potřeba, aby všichni přeručkovali stejně často).
+Připravte se do džungle. Přeručkujte 20× opičí hrazdy tohohle hřiště (není potřeba, aby všichni přeručkovali stejně často).
 
 5 bodů
 
@@ -242,7 +242,7 @@ nebo tě samého lstí tam vraždí — či by snad silou?‘
 nemoci velkého Dia se nijak vyhnouti nelze —
 otce však modlitbou svou hleď vzývati, Poseidona!‘
 
-Odysseus, který se Polyfémovi představil jako Nikdo vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
+Odysseus, který se Polyfémovi představil jako Nikdo, vás oslepil. Vyberte jednoho člena a ostatním zavažte oči (nebo je jiným způsobem nakrátko oslepte). Vidět pak můžete, až když dojdete na další stanoviště.
 
 7 bodů
 
