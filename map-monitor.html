@@ -149,6 +149,7 @@
 
     .ev-badge.geo { background: #1d4ed8; color: #bfdbfe; }
     .ev-badge.opened { background: #6b21a8; color: #e9d5ff; }
+    .ev-badge.check { background: #374151; color: #d1d5db; }
 
     #empty-msg {
       color: #555;
@@ -286,12 +287,12 @@
       card.className = 'event-card';
       card.style.borderLeftColor = color;
       const time = new Date(ev.timestamp).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const badgeClass = ev.event === 'geo_verified' ? 'geo' : 'opened';
-      const badgeLabel = ev.event === 'geo_verified' ? 'GPS ✓' : 'Otevřeno';
+      const badgeClass = ev.event === 'geo_verified' ? 'geo' : ev.event === 'card_opened' ? 'opened' : 'check';
+      const badgeLabel = ev.event === 'geo_verified' ? 'GPS ✓' : ev.event === 'card_opened' ? 'Otevřeno' : 'Poloha';
       const distTxt = ev.distanceM != null ? `${ev.distanceM} m` : '';
       card.innerHTML = `
         <div class="ev-team">${ev.team}</div>
-        <div class="ev-location">${ev.locationName}</div>
+        <div class="ev-location">${ev.locationName ?? '—'}</div>
         <div class="ev-meta">
           <span class="ev-badge ${badgeClass}">${badgeLabel}</span>
           <span>${time}</span>
@@ -321,7 +322,7 @@
         .map(msg => {
           try { return JSON.parse(msg.message); } catch { return null; }
         })
-        .filter(ev => ev && ev.event && ev.team && ev.locationName);
+        .filter(ev => ev && ev.event && ev.team);
 
       allEvents = parsed;
       renderEvents(allEvents);

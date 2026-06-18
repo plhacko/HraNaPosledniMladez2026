@@ -139,8 +139,7 @@ function colorOf(id) {
   if (loc?.type === 'end') return 'wild';
   return COLORS[(id - 1) % COLORS.length];
 }
-let debugNow = null;
-function getNow() { return debugNow ? new Date(debugNow) : new Date(); }
+function getNow() { return new Date(); }
 function isGameOver() {
   if (localStorage.getItem(FORCE_GAME_OVER_KEY) === 'true') return true;
   const n = getNow();
@@ -549,6 +548,13 @@ async function checkAll() {
       if (d <= PROXIMITY_M) nearbyIds.add(loc.id);
       else nearbyIds.delete(loc.id);
     });
+    sendNtfyEvent({
+      event: 'location_checked',
+      team: getTeamName(),
+      userLat: lat,
+      userLng: lng,
+      timestamp: new Date().toISOString(),
+    });
   } catch (err) {
     const msg = err && err.code === 1
       ? '⚠️ Přístup k poloze byl zamítnut'
@@ -937,19 +943,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // Debug time override
-  document.getElementById('btn-debug-time').addEventListener('click', () => {
-    const t = prompt('Debug time (HH:MM) or blank to reset:');
-    if (t && /^\d{1,2}:\d{2}$/.test(t)) {
-      const [h, m] = t.split(':').map(Number);
-      debugNow = new Date(); debugNow.setHours(h, m, 0, 0);
-      document.getElementById('debug-time-label').textContent = t;
-    } else {
-      debugNow = null;
-      document.getElementById('debug-time-label').textContent = 'real';
-    }
-    renderCards();
-  });
 
   // End-game card buttons
   document.getElementById('btn-end-early').addEventListener('click', () => {
