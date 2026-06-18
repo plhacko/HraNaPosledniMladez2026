@@ -10,6 +10,8 @@ const GEO_SKIP_KEY    = 'mladez2026_geo_skipped';
 const UNLOCKED_KEY    = 'mladez2026_unlocked';
 const SONG_KEY            = 'mladez2026_song';
 const FORCE_GAME_OVER_KEY = 'mladez2026_force_game_over';
+const TEAM_KEY     = 'mladez2026_team';
+const NTFY_TOPIC   = 'mz26g8r3n1x5k7p4';
 const COLORS       = ['red', 'blue', 'green', 'yellow'];
 
 let activeId = null;
@@ -75,6 +77,16 @@ function clearAll() {
 
 function getTotalPoints() { return Object.values(getPoints()).reduce((s, v) => s + v, 0); }
 function getTotalBonus()  { return Object.values(getBonus()).reduce((s, v) => s + v, 0); }
+
+function getTeamName() { return localStorage.getItem(TEAM_KEY) || 'Neznámý tým'; }
+
+function sendNtfyEvent(payload) {
+  fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload),
+  }).catch(() => {});
+}
 
 // ─── Haversine ───────────────────────────────────────────────────────────────
 
@@ -349,6 +361,17 @@ function openDetail(id) {
 
   // Previously unlocked on-site — show task immediately (also bypasses time-lock)
   if (getUnlocked().includes(id)) {
+    sendNtfyEvent({
+      event: 'card_opened',
+      team: getTeamName(),
+      locationId: loc.id,
+      locationName: loc.name,
+      userLat: userPos ? userPos.lat : null,
+      userLng: userPos ? userPos.lng : null,
+      targetLat: loc.lat,
+      targetLng: loc.lng,
+      timestamp: new Date().toISOString(),
+    });
     showTaskState(loc);
     return;
   }
@@ -483,6 +506,18 @@ async function checkDetailPos() {
     if (d <= PROXIMITY_M) {
       nearbyIds.add(loc.id);
       addUnlocked(loc.id);
+      sendNtfyEvent({
+        event: 'geo_verified',
+        team: getTeamName(),
+        locationId: loc.id,
+        locationName: loc.name,
+        userLat: lat,
+        userLng: lng,
+        targetLat: loc.lat,
+        targetLng: loc.lng,
+        distanceM: Math.round(d),
+        timestamp: new Date().toISOString(),
+      });
       showTaskState(loc);
     } else {
       document.getElementById('detail-distance-text').textContent =
@@ -771,6 +806,8 @@ function initSplash() {
   document.getElementById('btn-start').classList.toggle('hidden',    hasSave);
   document.getElementById('btn-continue').classList.toggle('hidden', !hasSave);
   document.getElementById('btn-new-game').classList.toggle('hidden', !hasSave);
+  const saved = localStorage.getItem(TEAM_KEY);
+  if (saved) document.getElementById('team-name-input').value = saved;
 }
 
 function resetGame() {
@@ -788,12 +825,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initJudgePanel();
 
   // Splash
+  const saveTeam = () => {
+    const v = document.getElementById('team-name-input').value.trim();
+    if (v) localStorage.setItem(TEAM_KEY, v);
+  };
   document.getElementById('btn-start')
-    .addEventListener('click', () => show('overview'));
+    .addEventListener('click', () => { saveTeam(); show('overview'); });
   document.getElementById('btn-continue')
-    .addEventListener('click', () => show('overview'));
+    .addEventListener('click', () => { saveTeam(); show('overview'); });
   document.getElementById('btn-new-game')
-    .addEventListener('click', () => { resetGame(); show('overview'); });
+    .addEventListener('click', () => { saveTeam(); resetGame(); show('overview'); });
 
   // Overview
   document.getElementById('btn-check-location')
@@ -862,6 +903,18 @@ document.addEventListener('DOMContentLoaded', () => {
       userPos = { lat, lng };
       const d = distM(lat, lng, loc.huntLat, loc.huntLng);
       if (d <= PROXIMITY_M) {
+        sendNtfyEvent({
+          event: 'geo_verified',
+          team: getTeamName(),
+          locationId: loc.id,
+          locationName: loc.name,
+          userLat: lat,
+          userLng: lng,
+          targetLat: loc.huntLat,
+          targetLng: loc.huntLng,
+          distanceM: Math.round(d),
+          timestamp: new Date().toISOString(),
+        });
         markDone(activeId, loc.basePoints);
         nearbyIds.delete(activeId);
         updateDoneState(loc);
