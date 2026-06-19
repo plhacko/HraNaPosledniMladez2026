@@ -19,6 +19,7 @@ const nearbyIds = new Set();
 const hiddenOnMap = new Set();
 let userPos = null;        // { lat, lng } — set whenever checkAll() succeeds
 let mapViewActive = false;
+let mapZoom = 1;
 let detailOpenedAt = 0;
 
 // ─── Storage helpers ─────────────────────────────────────────────────────────
@@ -270,7 +271,7 @@ function renderMapView() {
 
   // Determine scale: farthest located task, minimum 500 m
   const located = LOCATIONS.filter(l => l.lat !== null);
-  const maxDist = Math.max(500, ...located.map(l => distM(userPos.lat, userPos.lng, l.lat, l.lng)));
+  const maxDist = Math.max(500, ...located.map(l => distM(userPos.lat, userPos.lng, l.lat, l.lng))) / mapZoom;
 
   LOCATIONS.forEach(loc => {
     if (hiddenOnMap.has(loc.id)) return;
@@ -845,6 +846,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Overview
   document.getElementById('btn-check-location')
     .addEventListener('click', checkAll);
+
+  function updateZoomBtns() {
+    document.getElementById('zoom-in').disabled  = mapZoom >= 8;
+    document.getElementById('zoom-out').disabled = mapZoom <= 0.25;
+  }
+  document.getElementById('zoom-in').addEventListener('click', () => {
+    if (mapZoom < 8) { mapZoom *= 2; renderMapView(); }
+    updateZoomBtns();
+  });
+  document.getElementById('zoom-out').addEventListener('click', () => {
+    if (mapZoom > 0.25) { mapZoom /= 2; renderMapView(); }
+    updateZoomBtns();
+  });
 
   document.getElementById('btn-view-toggle').addEventListener('click', () => {
     mapViewActive = !mapViewActive;
