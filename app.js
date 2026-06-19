@@ -143,7 +143,7 @@ function getNow() { return new Date(); }
 function isGameOver() {
   if (localStorage.getItem(FORCE_GAME_OVER_KEY) === 'true') return true;
   const n = getNow();
-  return n.getHours() >= 21;
+  return n.getHours() > 21 || (n.getHours() === 21 && n.getMinutes() >= 30);
 }
 function isEndCardVisible() {
   const countable = LOCATIONS.filter(l => l.type !== 'end');
