@@ -259,6 +259,27 @@
     empty.style.display = 'none';
     document.getElementById('event-count').textContent = events.length;
 
+    // Draw a polyline per team (chronological order) before markers
+    const byTeam = {};
+    events.forEach(ev => {
+      if (!byTeam[ev.team]) byTeam[ev.team] = [];
+      byTeam[ev.team].push(ev);
+    });
+    Object.entries(byTeam).forEach(([team, tevents]) => {
+      const color = teamColor(team);
+      const coords = tevents
+        .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+        .map(ev => {
+          const lat = ev.userLat ?? ev.targetLat;
+          const lng = ev.userLng ?? ev.targetLng;
+          return (lat && lng) ? [lat, lng] : null;
+        })
+        .filter(Boolean);
+      if (coords.length >= 2) {
+        L.polyline(coords, { color, weight: 2.5, opacity: 0.65, dashArray: '7 5' }).addTo(eventLayer);
+      }
+    });
+
     // Newest first in sidebar
     const sorted = [...events].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
